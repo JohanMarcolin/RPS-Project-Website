@@ -1,0 +1,39 @@
+* {
+    outline: solid 1px green;
+}
+
+body {
+    height: 100%;
+    background-color: gray;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#logo-container {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+#nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+    padding: 0rem 2rem 0rem 2rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
