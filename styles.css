@@ -21,7 +21,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    overflow-y: visible;
+    
 }
 
 #menu-container {
@@ -29,6 +29,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     background-color: #d5d5d3;
+    
 }
 
 #logo-container {
@@ -72,7 +73,16 @@ nav a, #menu-button {
 
 main {
     grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #444444;
+}
+#game-container {
+    height: 100%;
+    width: 100%;
+    min-width: 500px;
+    background-color: lightslategray;
 }
 
 footer {
@@ -123,7 +133,9 @@ footer {
   }
 
   #menu-button {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
   }
   
