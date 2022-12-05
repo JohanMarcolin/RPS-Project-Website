@@ -26,7 +26,40 @@
     </header>
 
     <main>
-      <section id="home-container">Home Content</section>
+      <section id="home-container">
+       <!--  game content tested here -->
+        <div id="main-menu">
+          <h2>Rock Paper Scissors</h2>
+          <h3>Settings</h3>
+          <h3>Player name: <br><input type="text"></h3>
+          <h3>Best of: <br> 3 <input type="checkbox"> 5 <input type="checkbox">  </h3>
+          <button>Start Game</button>
+        </div>
+        <div id="game-running">
+          <div id="score">
+            <h3>Player Score : Computer Score</h3>
+          </div>
+          <div id="player-choice">
+            <h4>Player choice:</h4>
+            <div id="player-choice-rock">Rock</div>
+            <div id="player-choice-rock">Paper</div>
+            <div id="player-choice-rock">Scissors</div>
+          </div>
+          <div id="comparison-container">
+            <h3>Comparison</h3>
+          </div>
+          <div id="computer-choice">
+            <h4>Computer choice:</h4>
+            <div id="player-choice-rock">Rock</div>
+            <div id="player-choice-rock">Paper</div>
+            <div id="player-choice-rock">Scissors</div>
+          </div>
+          <div id="result">
+            <h3>Result</h3>
+          </div>
+        </div>
+      </section>
+
       <article id="game-container">Game Content</article>
       <section id="rules-container">Rules Content</section>
       <section id="stats-container">Stats Content</section>
@@ -34,7 +67,6 @@
 
     <footer></footer>
 
-    <script src="https://unpkg.com/feather-icons"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
