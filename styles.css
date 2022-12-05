@@ -2,6 +2,10 @@
 outline: solid 1px green;
 }
 
+html {
+    height: 100%;
+   }
+
 body {
     height: 100%;
     margin: 0;
@@ -9,7 +13,7 @@ body {
     background-color: #252525;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 0.3fr 8.7fr 1fr;
     grid-template-areas: 
     "header"
     "main"
@@ -42,6 +46,7 @@ header {
 
 .logo{
     padding: 0rem 1rem 0rem 1rem;
+    font-size: 1.5rem;
     background-color: #fdd947;
 }
 
@@ -57,7 +62,7 @@ nav {
     flex-wrap: nowrap;
 }
 
-nav a, #menu-button {
+nav a {
     padding: 0rem 2rem 0rem 2rem;
     text-decoration: none;
     color: black;
@@ -66,9 +71,13 @@ nav a, #menu-button {
 
 #menu-container {
     display: none;
+    padding-right: 2rem;
 }
 #menu-button {
     display: none;
+    margin: 0;
+  
+   
 }
 
 main {
@@ -78,10 +87,29 @@ main {
     justify-content: center;
     background-color: #444444;
 }
-#game-container {
-    height: 100%;
+
+main > * {
     width: 100%;
-    min-width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-container {
+    display: none;
+    background-color: lightslategray;
+}
+#game-container {
+    display: none;
+    background-color: lightslategray;
+}
+#rules-container {
+    display: none;
+    background-color: lightslategray;
+}
+#stats-container {
+    display: none;
     background-color: lightslategray;
 }
 
@@ -109,7 +137,7 @@ footer {
     #nav-container {
         grid-area: nav;
         position: absolute;
-        top: 5.034rem;
+        top: 3.82rem;
         z-index: 1;
         width: 100%;
         display: none;
