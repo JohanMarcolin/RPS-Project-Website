@@ -1,213 +1,275 @@
 * {
-outline: solid 1px green;
+  outline: solid 1px green;
 }
 
 html {
-    height: 100%;
-   }
+  height: 100%;
+}
 
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #252525;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 8.7fr 1fr;
-    grid-template-areas: 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #252525;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 8.7fr 1fr;
+  grid-template-areas:
     "header"
     "main"
     "footer";
 }
 
 header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 #menu-container {
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #d5d5d3;
-    
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #d5d5d3;
 }
 
 #logo-container {
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #d5d5d3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #d5d5d3;
 }
 
-
-.logo{
-    padding: 0rem 1rem 0rem 1rem;
-    font-size: 1.5rem;
-    background-color: #fdd947;
+.logo {
+  padding: 0rem 1rem 0rem 1rem;
+  font-size: 1.5rem;
+  background-color: #fdd947;
 }
 
 #nav-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d5d5d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d5d5d3;
 }
 
 nav {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 nav a {
-    padding: 0rem 2rem 0rem 2rem;
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+  padding: 0rem 2rem 0rem 2rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
 }
 
 #menu-container {
-    display: none;
-    padding-right: 2rem;
+  display: none;
+  padding-right: 2rem;
 }
 #menu-button {
-    display: none;
-    margin: 0;
-  
-   
+  display: none;
+  margin: 0;
 }
 
 main {
-    grid-area: main;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #444444;
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444444;
 }
 
 main > * {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #home-container {
-    display: none;
-    background-color: lightslategray;
+  display: none;
+  background-color: lightslategray;
 }
 #game-container {
-    display: none;
-    background-color: lightslategray;
+  display: none;
+  background-color: lightslategray;
 }
 
 #main-menu {
     height: 90%;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-#game-running {
-    height: 90%;
-    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr fr 1fr;
-    grid-template-areas: 
-    "score score score"
-    "choice1 comparison choice2"
-    "result result result"; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title title"
+      ". settings ."
+      "start-button start-button start-button";
 }
-#score {
-    grid-area: score;
+
+#title {
+    grid-area: title;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
-#player-choice {
-    grid-area: choice1;
+#settings {
+    grid-area: settings;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#comparison-container {
-    grid-area: comparison;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#computer-choice {
-    grid-area: choice2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#result {
-    grid-area: result;
+
+#start-button {
+    grid-area: start-button;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 
+#game-running {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "score score score"
+    "choice1 comparison choice2"
+    "result result result";
+}
+.score {
+  grid-area: score;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#player-score {
+    display: none;
+}
+#computer-score {
+    display: none;
+}
+#player-choice {
+  grid-area: choice1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#comparison-container {
+  grid-area: comparison;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#computer-choice {
+  grid-area: choice2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result {
+  grid-area: result;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#split-result-player {
+    display: none;
+}
+
+#split-result-computer {
+    display: none;
+}
+
+#game-over {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "score score score"
+    ". final-result ."
+    "buttons buttons buttons";
+}
+
+#final-score {
+    grid-area: score;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#final-result {
+    grid-area: final-result;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#end-buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 
 #rules-container {
-    display: none;
-    background-color: lightslategray;
+  display: none;
+  background-color: lightslategray;
 }
 #stats-container {
-    display: none;
-    background-color: lightslategray;
+  display: none;
+  background-color: lightslategray;
 }
 
 footer {
-    grid-area: footer;
-    background-color: #d5d5d3;;
+  grid-area: footer;
+  background-color: #d5d5d3;
 }
 
 @media screen and (max-width: 700px) {
-    
-    header {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "logo button"
+      "nav nav";
+  }
 
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: 
-        "logo button"
-        "nav nav";
-    }
+  #logo-container {
+    grid-area: logo;
+  }
 
-    #logo-container {
-        grid-area: logo;
-    }
+  #nav-container {
+    grid-area: nav;
+    position: absolute;
+    top: 3.82rem;
+    z-index: 1;
+    width: 100%;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    #nav-container {
-        grid-area: nav;
-        position: absolute;
-        top: 3.82rem;
-        z-index: 1;
-        width: 100%;
-        display: none;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    
-    
-    nav {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        
+  nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
   #menu-container {
     grid-area: button;
@@ -222,6 +284,73 @@ footer {
     justify-content: center;
     cursor: pointer;
   }
+
+  #game-running {
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "player-choice player-choice player-choice"
+      "player-score alt-comparison computer-score"
+      "computer-choice computer-choice computer-choice";
+  }
   
+  .score {
+    display: none;
+  }
+
+  .result {
+    display: none;
+ 
+  }
+
+  #player-choice {
+    grid-area: player-choice;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #computer-choice {
+    grid-area: computer-choice;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #player-score {
+    grid-area: player-score;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#comparison-container{
+    grid-area: alt-comparison;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#split-result-player {
+    display: flex;
+}
+
+#split-result-computer {
+    display: flex;
+}
+#computer-score {
+    grid-area: computer-score;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 }
