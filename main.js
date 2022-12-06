@@ -3,7 +3,9 @@ import { runGame } from "./game.js"
 
 setupMenu();
 
-runGame();
+
+    runGame();
+
 
 
 
