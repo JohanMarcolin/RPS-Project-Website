@@ -70,7 +70,7 @@ nav a {
   display: none;
   padding-right: 2rem;
 }
-#menu-button {
+#menu-button-box {
   display: none;
   margin: 0;
 }
@@ -100,7 +100,7 @@ main > * {
   background-color: lightslategray;
 }
 
-#main-menu {
+#main-menu-container {
     height: 90%;
     width: 90%;
     display: grid;
@@ -112,14 +112,14 @@ main > * {
       "start-button start-button start-button";
 }
 
-#title {
+#title-box {
     grid-area: title;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
 }
-#settings {
+#settings-box {
     grid-area: settings;
     display: flex;
     flex-direction: column;
@@ -127,14 +127,14 @@ main > * {
     justify-content: center;
 }
 
-#start-button {
+#start-button-box {
     grid-area: start-button;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 
-#game-running {
+#game-running-container {
   height: 90%;
   width: 90%;
   display: grid;
@@ -145,40 +145,40 @@ main > * {
     "choice1 comparison choice2"
     "result result result";
 }
-.score {
+#compared-score-box {
   grid-area: score;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-#player-score {
+#player-score-display {
     display: none;
 }
-#computer-score {
+#computer-score-display {
     display: none;
 }
-#player-choice {
+#player-choice-box {
   grid-area: choice1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-#comparison-container {
+#comparison-box {
   grid-area: comparison;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#computer-choice {
+#computer-choice-box {
   grid-area: choice2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.result {
+#result-box {
   grid-area: result;
   display: flex;
   align-items: flex-start;
@@ -193,7 +193,7 @@ main > * {
     display: none;
 }
 
-#game-over {
+#game-over-container {
   height: 90%;
   width: 90%;
   display: grid;
@@ -205,19 +205,19 @@ main > * {
     "buttons buttons buttons";
 }
 
-#final-score {
+#final-score-box {
     grid-area: score;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
-#final-result {
+#final-result-box {
     grid-area: final-result;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#end-buttons {
+#end-buttons-box {
     grid-area: buttons;
     display: flex;
     flex-direction: column;
@@ -278,14 +278,14 @@ footer {
     align-items: center;
   }
 
-  #menu-button {
+  #menu-button-box {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
   }
 
-  #game-running {
+  #game-running-container {
     height: 90%;
     width: 90%;
     display: grid;
@@ -301,12 +301,16 @@ footer {
     display: none;
   }
 
-  .result {
+  #result-box {
     display: none;
  
   }
 
-  #player-choice {
+  #compared-score-display {
+    display: none;
+  }
+
+  #player-choice-box {
     grid-area: player-choice;
     display: flex;
     flex-direction: column;
@@ -314,7 +318,7 @@ footer {
     justify-content: flex-end;
   }
 
-  #computer-choice {
+  #computer-choice-box {
     grid-area: computer-choice;
     display: flex;
     flex-direction: column-reverse;
@@ -322,14 +326,18 @@ footer {
     justify-content: flex-end;
   }
 
-  #player-score {
+  #player-score-box {
     grid-area: player-score;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#comparison-container{
+#player-score-display {
+  display: flex;
+}
+
+#comparison-box{
     grid-area: alt-comparison;
     display: flex;
     flex-direction: column;
@@ -344,11 +352,15 @@ footer {
 #split-result-computer {
     display: flex;
 }
-#computer-score {
+#computer-score-box {
     grid-area: computer-score;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#computer-score-display {
+  display: flex;
 }
 
 

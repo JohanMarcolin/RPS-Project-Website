@@ -1,4 +1,4 @@
-let menuButton = document.querySelector("#menu-button");
+let menuButton = document.querySelector("#menu-button-box");
 let menuContainer = document.querySelector("#nav-container");
 
 let homeButton = document.querySelector("#nav-home");

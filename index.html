@@ -13,7 +13,7 @@
             <h1 class="logo">RPS</h1>
         </div>
         <div id="menu-container">
-          <h2 id="menu-button"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> </h2>
+          <h2 id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> </h2>
         </div>
         <div id="nav-container">
             <nav>
@@ -28,61 +28,66 @@
     <main>
       <section id="home-container">
        <!--  game content tested here -->
-        <div id="main-menu">
-          <div id="title">
+        <div id="main-menu-container">
+          <div id="title-box">
             <h2>Rock Paper Scissors</h2>
             <h3>LOGO</h3>
           </div>
-          <div id="settings">
+          <div id="settings-box">
             <h3>Settings</h3>
-            <h3>Player name: <br><input type="text"></h3>
-            <h3>Best of: <br> 3 <input type="checkbox"> 5 <input type="checkbox">  </h3>
+            <h3>Player name: <br><input type="text" id="player-name"></h3>
+            <h3>Best of: <br> 3 <input type="checkbox" id="check-3"> 5 <input type="checkbox" id="check-5">  </h3>
           </div>
-          <div id="start-button">
-            <button>Start Game</button>
+          <div id="start-button-box">
+            <button id="start-button">Start Game</button>
           </div>
         </div>
-        <div id="game-running">
-          <div class="score">
-            <h3>Player Score : Computer Score</h3>
+
+        <div id="game-running-container">
+          <div id="compared-score-box">
+            <h3 id="compared-score-display">Player Score : Computer Score</h3>
           </div>
-          <div id="player-score">Player <br> Score:</div>
-          <div id="computer-score">Computer Score:</div>
-          <div id="player-choice">
-            <h4>Player choice:</h4>
+          <div id="player-score-box">
+            <h4 id="player-score-display">player.score from js</h4>
+          </div>
+          <div id="computer-score-box">
+            <h4 id="computer-score-display">computer.score from js</h4>
+          </div>
+          <div id="player-choice-box">
+            <h4 id="player-name-display">Player</h4>
             <div id="player-choice-rock">Rock</div>
             <div id="player-choice-paper">Paper</div>
             <div id="player-choice-scissors">Scissors</div>
           </div>
-          <div id="comparison-container">
-            <div id="split-result-player">
-              <h4>Result</h4>
+          <div id="comparison-box">
+            <div id="player-result">
+              <h4 id="split-result-player">Result</h4>
             </div>
             <h3>Comparison</h3>
-            <div id="split-result-computer">
-              <h4>Result</h4>
+            <div id="computer-result">
+              <h4 id="split-result-computer">Result</h4>
             </div>
           </div>
-          <div id="computer-choice">
-            <h4>Computer choice:</h4>
+          <div id="computer-choice-box">
+            <h4>Computer</h4>
             <div id="player-choice-rock">Rock</div>
             <div id="player-choice-rock">Paper</div>
             <div id="player-choice-rock">Scissors</div>
           </div>
-          <div class="result">
-            <h3>Result</h3>
+          <div id="result-box">
+            <h3 id="round-result-display">Result</h3>
           </div>
          
         
         </div>
-        <div id="game-over">
-          <div id="final-score">
-            <h3>Player Score : Computer Score</h3>
+        <div id="game-over-container">
+          <div id="final-score-box">
+            <h3 id="final-compared-score-display">Player Score : Computer Score</h3>
           </div>
-          <div id="final-result">
-            <h3>Result</h3>
+          <div id="final-result-box">
+            <h3 id="final-result-display">Final result</h3>
           </div>
-            <div id="end-buttons">
+            <div id="end-buttons-box">
               <button>Rematch</button>
               <button>Return to main menu</button>
             </div>
