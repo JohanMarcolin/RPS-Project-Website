@@ -1,23 +1,30 @@
 //MAIN-MENU VARIABLES
+let mainMenu = document.querySelector("#main-menu-container");
 let nameInput = document.querySelector("#player-name");
 let check3 = document.querySelector("#check-3");
 let check5 = document.querySelector("#check-5");
 let startButton = document.querySelector("#start-button");
 
 //GAME-RUNNING VARIABLES
+let gameRunning = document.querySelector("#game-running-container");
 let comparedScore = document.querySelector("#compared-score-display");
 let playerScore = document.querySelector("#player-score-display");
 let computerScore = document.querySelector("#computer-score-display");
 let playerName = document.querySelector("#player-name-display");
 let roundResult = document.querySelector("#round-result-display");
+let splitRoundResultPlayer = document.querySelector("#split-result-player");
+let splitRoundResultComputer = document.querySelector("#split-result-display");
 
 let rockElement = document.querySelector("#player-choice-rock");
 let paperElement = document.querySelector("#player-choice-paper");
 let scissorsElement = document.querySelector("#player-choice-scissors");
 
 //GAME-OVER VARIABLES
+let gameOver = document.querySelector("#game-over-container");
 let finalComparedScore = document.querySelector("#final-compared-score-display");
 let finalResult = document.querySelector("#final-result-display");
+let rematchButton = document.querySelector("#rematch-button");
+let returnToMainMenuButton = document.querySelector("#return-to-main-menu-button");
 
 
 let game = { settings: { nameWasChosen: false, bestOf: null } };
@@ -41,16 +48,30 @@ nameInput.addEventListener("change", (event) => {
   return player.name, game.settings;
 });
 
-check3.addEventListener("click", (event) => {
-  
-  game.settings.bestOf = 3;
- 
+check3.addEventListener("change", (event) => {
+  if (!check3.checked) {
+    game.settings.bestOf = null;
+    return game.settings;
+  }
+  else {game.settings.bestOf = 3;
   return game.settings;
+  };
 });
-check5.addEventListener("click", () => {
-  game.settings.bestOf = 5;
+check5.addEventListener("change", () => {
+  if (!check5.checked) {
+    game.settings.bestOf = null;
+    return game.settings;
+  }
+  else {
+    game.settings.bestOf = 5;
+    return game.settings;
+  }
+});
 
-  return game.settings;
+//handles switch to next screen
+startButton.addEventListener("click", () => {
+  mainMenu.style.display = "none";
+  gameRunning.style.display = "grid";
 });
 
 rockElement.addEventListener("click", () => {
@@ -69,7 +90,29 @@ scissorsElement.addEventListener("click", () => {
   return player.choice;
 });
 
+rematchButton.addEventListener("click", () => {
+  player.score = 0;
+  computer.score = 0;
+  gameOver.style.display = "none";
+  gameRunning.style.display = "grid";
+  roundResult.innerText = "Result"
+  return player.score, computer.score;
+});
+
+returnToMainMenuButton.addEventListener("click", () => {
+  player.score = 0;
+  computer.score = 0;
+  gameOver.style.display = "none";
+  mainMenu.style.display = "grid";
+  roundResult.innerText = "Result"
+  return player.score, computer.score;
+});
+
+
+
+
 const choices = ["rock", "paper", "scissors"];
+
 
 export function runGame() {
   requestAnimationFrame(runGame);
@@ -89,14 +132,13 @@ else if (!check5.checked) {
 }
 
   //handle settings required for start game
-  if (player.name !== null ||
-    player.name !== "" &&
-     check3.checked ||
-     check5.checked) {
-      startButton.removeAttribute("disabled");
+  if (player.name === null ||
+    player.name === "" ||
+     game.bestOf === null) {
+      startButton.setAttribute("disabled", "");
   }
   else {
-    startButton.setAttribute("disabled", "");
+    startButton.removeAttribute("disabled");
   }
 
   //for laptops and desktops
@@ -172,7 +214,13 @@ else if (!check5.checked) {
     );
     finalComparedScore.innerText = player.score + " : " + computer.score;
     finalResult.innerText = player.name + " wins the game!"
-  } else if (computer.score === game.settings.bestOf - 1 && computer.score > player.score) {
+
+    setTimeout(function(){
+      gameRunning.style.display = "none";
+      gameOver.style.display = "grid";
+   }, 200);
+  } 
+  else if (computer.score === game.settings.bestOf - 1 && computer.score > player.score) {
     console.log(
       "Computer wins - " +
         "Player: " +
@@ -182,5 +230,10 @@ else if (!check5.checked) {
     );
     finalComparedScore.innerText = player.score + " : " + computer.score;
     finalResult.innerText = computer.name + " wins the game!"
+  
+    setTimeout(function(){
+      gameRunning.style.display = "none";
+      gameOver.style.display = "grid";
+   }, 200);
   }
 }
