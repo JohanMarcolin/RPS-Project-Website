@@ -24,3 +24,6 @@ export let finalComparedScore = document.querySelector("#final-compared-score-di
 export let finalResult = document.querySelector("#final-result-display");
 export let rematchButton = document.querySelector("#rematch-button");
 export let returnToMainMenuButton = document.querySelector("#return-to-main-menu-button");
+//STATS
+export let playerStats = document.querySelector("#player-stats");
+export let computerStats = document.querySelector("#computer-stats");

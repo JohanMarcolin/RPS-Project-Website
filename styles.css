@@ -232,6 +232,9 @@ main > * {
 }
 #stats-container {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: lightslategray;
 }
 

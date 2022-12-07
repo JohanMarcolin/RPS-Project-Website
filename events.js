@@ -1,30 +1,30 @@
 import { game, player, computer } from "./game.js";
 import {
-    /* main menu elements */
-    mainMenu,
-    nameInput,
-    check3,
-    check5,
-    startButton,
-    /* game running elements */
-    gameRunning,
-    comparedScore,
-    playerScore,
-    computerScore,
-    playerName,
-    roundResult,
-    splitRoundResultPlayer,
-    splitRoundResultComputer,
-    rockElement,
-    paperElement,
-    scissorsElement,
-    /*  game over elements */
-    gameOver,
-    finalComparedScore,
-    finalResult,
-    rematchButton,
-    returnToMainMenuButton,
-  } from "./elements.js";
+  /* main menu elements */
+  mainMenu,
+  nameInput,
+  check3,
+  check5,
+  startButton,
+  /* game running elements */
+  gameRunning,
+  comparedScore,
+  playerScore,
+  computerScore,
+  playerName,
+  roundResult,
+  splitRoundResultPlayer,
+  splitRoundResultComputer,
+  rockElement,
+  paperElement,
+  scissorsElement,
+  /*  game over elements */
+  gameOver,
+  finalComparedScore,
+  finalResult,
+  rematchButton,
+  returnToMainMenuButton,
+} from "./elements.js";
 
 export function handleChange(event) {
   if (event.target.id === "player-name") {
@@ -74,14 +74,22 @@ export function handleClick(event) {
     player.choice.type = "scissors";
     return player.choice;
   }
-  if (
-    event.target.id === "rematch-button" ||
-    event.target.id === "return-to-main-menu-button"
-  ) {
+  if (event.target.id === "rematch-button") {
     player.score = 0;
     computer.score = 0;
     gameOver.style.display = "none";
     gameRunning.style.display = "grid";
+    roundResult.innerText = "Result";
+    splitRoundResultPlayer.innerText = " ";
+    splitRoundResultComputer.innerText = " ";
+    return player.score, computer.score;
+  }
+
+  if (event.target.id === "return-to-main-menu-button") {
+    player.score = 0;
+    computer.score = 0;
+    gameOver.style.display = "none";
+    mainMenu.style.display = "grid";
     roundResult.innerText = "Result";
     splitRoundResultPlayer.innerText = " ";
     splitRoundResultComputer.innerText = " ";

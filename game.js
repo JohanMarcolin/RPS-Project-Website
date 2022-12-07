@@ -23,6 +23,9 @@ import {
   finalResult,
   rematchButton,
   returnToMainMenuButton,
+  /* stats elements */
+  playerStats,
+  computerStats,
 } from "./elements.js";
 
 import {
@@ -31,22 +34,25 @@ import {
   handleClick,
   handleStartButton,
 } from "./events.js";
+import { choicesAreComparedAndWinnerIsDeclared } from "./logic.js";
 
 export let game = {
   settings: { nameWasChosen: false, bestOf: null },
+  stats: {
+    player: { choices: [], wins: 0, losses: 0 },
+    computer: { choices: [], wins: 0, losses: 0 },
+  },
 };
 
 export let player = {
   name: null,
   choice: { made: false, type: "" },
   score: 0,
-  stats: { choices: [], wins: [], losses: [] },
 };
 export let computer = {
   name: "Computer",
   choice: { made: false, type: "" },
   score: 0,
-  stats: { choices: [], wins: [], losses: [] },
 };
 
 const choices = ["rock", "paper", "scissors"];
@@ -76,8 +82,7 @@ export function runGame() {
   //player chooses R, P or S
   if (!player.choice.made) {
     return;
-  }
-  else {
+  } else {
     player.choice.made = false;
   }
   console.log("Player: " + player.choice.type);
@@ -86,107 +91,25 @@ export function runGame() {
   computer.choice.type = choices[Math.floor(Math.random() * (3 - 0) + 0)];
   console.log("Computer: " + computer.choice.type);
 
+  //stats recording - choices
+  game.stats.player.choices.push(player.choice);
+  game.stats.computer.choices.push(computer.choice);
   //game logic
-  if (player.choice.type === computer.choice.type) {
-    console.log("Draw");
-    roundResult.innerText = "Draw";
-    splitRoundResultPlayer.innerText = "Draw";
-    splitRoundResultComputer.innerText = "Draw";
-  } else if (
-    player.choice.type === "rock" &&
-    computer.choice.type === "scissors"
-  ) {
-    roundResult.innerText = player.name + " wins the round!";
-    splitRoundResultPlayer.innerText = player.name + " wins the round!";
-    splitRoundResultComputer.innerText = " ";
-    player.score++;
-  } else if (
-    player.choice.type === "paper" &&
-    computer.choice.type === "rock"
-  ) {
-    roundResult.innerText = player.name + " wins the round!";
-    splitRoundResultPlayer.innerText = player.name + " wins the round!";
-    splitRoundResultComputer.innerText = " ";
-    player.score++;
-  } else if (
-    player.choice.type === "scissors" &&
-    computer.choice.type === "paper"
-  ) {
-    roundResult.innerText = player.name + " wins the round!";
-    splitRoundResultPlayer.innerText = player.name + " wins the round!";
-    splitRoundResultComputer.innerText = " ";
-    player.score++;
-  } else if (
-    player.choice.type === "rock" &&
-    computer.choice.type === "paper"
-  ) {
-    roundResult.innerText = computer.name + " wins the round!";
-    splitRoundResultPlayer.innerText = " ";
-    splitRoundResultComputer.innerText = computer.name + " wins the round!";
-    computer.score++;
-  } else if (
-    player.choice.type === "paper" &&
-    computer.choice.type === "scissors"
-  ) {
-    roundResult.innerText = computer.name + " wins the round!";
-    splitRoundResultPlayer.innerText = " ";
-    splitRoundResultComputer.innerText = computer.name + " wins the round!";
-    computer.score++;
-  } else if (
-    player.choice.type === "scissors" &&
-    computer.choice.type === "rock"
-  ) {
-    roundResult.innerText = computer.name + " wins the round!";
-    splitRoundResultPlayer.innerText = " ";
-    splitRoundResultComputer.innerText = computer.name + " wins the round!";
-    computer.score++;
-  }
+  choicesAreComparedAndWinnerIsDeclared();
 
-  console.log("Player: " + player.score + " Computer: " + computer.score);
+  //stats prototype
+  playerStats.innerText =
+    "Player wins: " + game.stats.player.wins + 
+    " Losses: " + game.stats.player.losses;
+  computerStats.innerText =
+    "Computer wins: " + game.stats.computer.wins + 
+    " Losses: " + game.stats.computer.losses;
 
-  if (
-    player.score === game.settings.bestOf - 1 &&
-    player.score > computer.score
-  ) {
-    console.log(
-      "Player wins - " +
-        "Player: " +
-        player.score +
-        " Computer: " +
-        computer.score
-    );
-    finalComparedScore.innerText = player.score + " : " + computer.score;
-    finalResult.innerText = player.name + " wins the game!";
-
-    setTimeout(function () {
-      gameRunning.style.display = "none";
-      gameOver.style.display = "grid";
-    }, 200);
-  } else if (
-    computer.score === game.settings.bestOf - 1 &&
-    computer.score > player.score
-  ) {
-    console.log(
-      "Computer wins - " +
-        "Player: " +
-        player.score +
-        " Computer: " +
-        computer.score
-    );
-    finalComparedScore.innerText = player.score + " : " + computer.score;
-    finalResult.innerText = computer.name + " wins the game!";
-
-    setTimeout(function () {
-      gameRunning.style.display = "none";
-      gameOver.style.display = "grid";
-    }, 200);
-  }
 }
 
 function showScore() {
   //for laptops and desktops
   comparedScore.innerText = player.score + " : " + computer.score;
-
   //for phones and tablets
   playerScore.innerText = player.score;
   computerScore.innerText = computer.score;
