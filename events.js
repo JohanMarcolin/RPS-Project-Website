@@ -25,6 +25,7 @@ import {
   rematchButton,
   returnToMainMenuButton,
 } from "./elements.js";
+import { animatesPlayerElement } from "./animations.js";
 
 export function handleChange(event) {
   if (event.target.id === "player-name") {
@@ -55,6 +56,8 @@ export function handleChange(event) {
 }
 
 export function handleClick(event) {
+  if(player.choice.animating) { return };
+
   if (event.target.id === "start-button") {
     mainMenu.style.display = "none";
     gameRunning.style.display = "grid";
@@ -62,16 +65,19 @@ export function handleClick(event) {
   if (event.target.id === "player-choice-rock") {
     player.choice.made = true;
     player.choice.type = "rock";
+    animatesPlayerElement(player, rockElement, "player-choice-animation")
     return player.choice;
   }
   if (event.target.id === "player-choice-paper") {
     player.choice.made = true;
     player.choice.type = "paper";
+    animatesPlayerElement(player, paperElement, "player-choice-animation")
     return player.choice;
   }
   if (event.target.id === "player-choice-scissors") {
     player.choice.made = true;
     player.choice.type = "scissors";
+    animatesPlayerElement(player, scissorsElement, "player-choice-animation")
     return player.choice;
   }
   if (event.target.id === "rematch-button") {

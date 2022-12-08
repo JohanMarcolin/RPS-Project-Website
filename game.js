@@ -1,3 +1,4 @@
+import { animatesComputerElement } from "./animations.js";
 import {
   /* main menu elements */
   mainMenu,
@@ -46,12 +47,12 @@ export let game = {
 
 export let player = {
   name: null,
-  choice: { made: false, type: "" },
+  choice: { made: false, type: "", animating: false },
   score: 0,
 };
 export let computer = {
   name: "Computer",
-  choice: { made: false, type: "" },
+  choice: { made: false, type: "", animating: false },
   score: 0,
 };
 
@@ -90,6 +91,7 @@ export function runGame() {
   //computer chooses R, P or S
   computer.choice.type = choices[Math.floor(Math.random() * (3 - 0) + 0)];
   console.log("Computer: " + computer.choice.type);
+  animatesComputerElement(computer, "computer-choice-animation");
 
   //stats recording - choices
   game.stats.player.choices.push(player.choice);

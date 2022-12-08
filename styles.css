@@ -216,6 +216,10 @@ margin-bottom: 1rem;
   justify-content: center;
 }
 
+#player-choice-box img, #computer-choice-box img {
+  width: 3rem;
+}
+
 #computer-name-display {
   margin: 0;
   margin-bottom: 1rem;
@@ -228,9 +232,7 @@ margin-bottom: 1rem;
   justify-content: center;
 }
 
-#player-choice-box img, #computer-choice-box img {
-  width: 2rem;
-}
+
 #result-box {
   grid-area: result;
   display: flex;
@@ -452,4 +454,36 @@ footer {
   #computer-score-display {
     display: flex;
   }
+
+/* ANIMATIONS PLAYER */
+.player-choice-animation {
+  position: relative;
+  animation-name: player_element;
+  animation-duration: 2s;  
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+@keyframes player_element {
+  from {top: 0rem;}
+  to {top: 9.4rem;}
+}
+
+/* ANIMATIONS COMPUTER */
+.computer-choice-animation {
+  position: relative;
+  animation-name: computer_element;
+  animation-duration: 2s;  
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes computer_element {
+  from {top: 0rem;}
+  to {top: -9.4rem;}
+}
+
+
+
+
+
 }

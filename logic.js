@@ -94,10 +94,10 @@ export function choicesAreComparedAndWinnerIsDeclared() {
     player.score === game.settings.bestOf - 1 &&
     player.score > computer.score
   ) {
-      showsFinalScoresAndResults(player.name + " wins the game!");
-      switchesToNextContainerAfterThisTime(gameRunning, gameOver, 200);
-      game.stats.player.wins++;
-      game.stats.computer.losses++;
+    showsFinalScoresAndResults(player.name + " wins the game!");
+    switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
+    game.stats.player.wins++;
+    game.stats.computer.losses++;
   }
 
   if (
@@ -105,7 +105,7 @@ export function choicesAreComparedAndWinnerIsDeclared() {
     computer.score > player.score
   ) {
     showsFinalScoresAndResults(computer.name + " wins the game!");
-    switchesToNextContainerAfterThisTime(gameRunning, gameOver, 200);
+    switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
     game.stats.computer.wins++;
     game.stats.player.losses++;
   }

@@ -17,6 +17,9 @@ export let splitRoundResultComputer = document.querySelector("#split-result-comp
   export let rockElement = document.querySelector("#player-choice-rock");
   export let paperElement = document.querySelector("#player-choice-paper");
   export let scissorsElement = document.querySelector("#player-choice-scissors");
+  export let computerRockElement = document.querySelector("#computer-choice-rock");
+  export let computerPaperElement = document.querySelector("#computer-choice-paper");
+  export let computerScissorsElement = document.querySelector("#computer-choice-scissors");
 
 //GAME-OVER VARIABLES
 export let gameOver = document.querySelector("#game-over-container");
