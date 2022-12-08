@@ -4,6 +4,8 @@
 
 html {
   height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -25,13 +27,13 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  background-color: #d5d5d3;
 }
 
 #menu-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #d5d5d3;
 }
 
 #logo-container {
@@ -101,37 +103,57 @@ main > * {
 }
 
 #main-menu-container {
-    height: 90%;
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-      "title title title"
-      ". settings ."
-      "start-button start-button start-button";
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title title"
+    ". settings ."
+    "start-button start-button start-button";
+}
+
+.game-colors {
+  background-image: radial-gradient(circle, #2d3236, #262a2d, #1f2224, #181b1c, #111314);
+  color: #ffffff;
+}
+
+button {
+  display: inline-block;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 0.15rem solid #cccccc;
+  font-weight: 400;
+  width: 7rem;
+  color: #000000;
+  background-color: #cccccc;
+  text-align: center;
+}
+button:hover {
+  border-color: #7a7a7a;
 }
 
 #title-box {
-    grid-area: title;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 #settings-box {
-    grid-area: settings;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #start-button-box {
-    grid-area: start-button;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  grid-area: start-button;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 #game-running-container {
@@ -152,11 +174,12 @@ main > * {
   justify-content: center;
 }
 
+
 #player-score-display {
-    display: none;
+  display: none;
 }
 #computer-score-display {
-    display: none;
+  display: none;
 }
 #player-choice-box {
   grid-area: choice1;
@@ -165,11 +188,25 @@ main > * {
   align-items: center;
   justify-content: center;
 }
+
+#player-name-display {
+margin: 0;
+margin-bottom: 1rem;
+}
+
+#player-choice-elements-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #comparison-box {
   grid-area: comparison;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 33%;
 }
 #computer-choice-box {
   grid-area: choice2;
@@ -177,6 +214,22 @@ main > * {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#computer-name-display {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#computer-choice-elements-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#player-choice-box img, #computer-choice-box img {
+  width: 2rem;
 }
 #result-box {
   grid-area: result;
@@ -186,11 +239,11 @@ main > * {
 }
 
 #split-result-player {
-    display: none;
+  display: none;
 }
 
 #split-result-computer {
-    display: none;
+  display: none;
 }
 
 #game-over-container {
@@ -206,25 +259,24 @@ main > * {
 }
 
 #final-score-box {
-    grid-area: score;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  grid-area: score;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 #final-result-box {
-    grid-area: final-result;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: final-result;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #end-buttons-box {
-    grid-area: buttons;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  grid-area: buttons;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-
 
 #rules-container {
   display: none;
@@ -299,14 +351,9 @@ footer {
       "player-score alt-comparison computer-score"
       "computer-choice computer-choice computer-choice";
   }
-  
-  .score {
-    display: none;
-  }
 
   #result-box {
     display: none;
- 
   }
 
   #compared-score-display {
@@ -315,57 +362,94 @@ footer {
 
   #player-choice-box {
     grid-area: player-choice;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "player-name"
+    "player-choices";
+  }
+  #player-name-display {
+    grid-area: player-name;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+    align-self: flex-end;
+    justify-self: center;
+    margin: 1rem;
+    
+  }
+  #player-choice-elements-box {
+  grid-area: player-choices;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  
   }
 
   #computer-choice-box {
     grid-area: computer-choice;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-areas: 
+    ". computer-choices ."
+    ". computer-name ."
+    ". . .";
   }
+/* revise symmetry! */
+  #computer-name-display {
+    grid-area: computer-name;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    justify-self: center;
+    margin: 1rem;
+  }
+
+  #computer-choice-elements-box {
+    grid-area: computer-choices;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    }
 
   #player-score-box {
     grid-area: player-score;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-#player-score-display {
-  display: flex;
-}
+  #player-score-display {
+    display: flex;
+  }
 
-#comparison-box{
+  #comparison-box {
     grid-area: alt-comparison;
+    min-width: 33.333%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+  }
 
-#split-result-player {
+  #split-result-player {
     display: flex;
-}
+  }
 
-#split-result-computer {
+  #split-result-computer {
     display: flex;
-}
-#computer-score-box {
+  }
+  #computer-score-box {
     grid-area: computer-score;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-#computer-score-display {
-  display: flex;
-}
-
-
-
+  #computer-score-display {
+    display: flex;
+  }
 }

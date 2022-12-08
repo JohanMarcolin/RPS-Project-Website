@@ -28,10 +28,12 @@
     <main>
       <section id="home-container">
        <!--  game content tested here -->
-        <div id="main-menu-container">
+        <div class="game-colors" id="main-menu-container">
           <div id="title-box">
             <h2>Rock Paper Scissors</h2>
-            <h3>LOGO</h3>
+            <div id="interactive-logo">
+            <img src="RPSPlaceholder.png" width="150rem" alt="placeholder logo of three hands">
+          </div>
           </div>
           <div id="settings-box">
             <h3>Settings</h3>
@@ -43,7 +45,7 @@
           </div>
         </div>
 
-        <div id="game-running-container">
+        <div class="game-colors" id="game-running-container">
           <div id="compared-score-box">
             <h3 id="compared-score-display">Player Score : Computer Score</h3>
           </div>
@@ -54,10 +56,18 @@
             <h4 id="computer-score-display">computer.score from js</h4>
           </div>
           <div id="player-choice-box">
-            <h4 id="player-name-display">Player</h4>
-            <div id="player-choice-rock">Rock</div>
-            <div id="player-choice-paper">Paper</div>
-            <div id="player-choice-scissors">Scissors</div>
+           
+              <h4 id="player-name-display">Player</h4>
+            
+    
+            <div id="player-choice-elements-box">
+              <img src="rock.png" id="player-choice-rock" alt="">
+           
+              <img src="paper.png" id="player-choice-paper" alt="">
+            
+           
+              <img src="scissors.png" id="player-choice-scissors" alt="">
+          </div>
           </div>
           <div id="comparison-box">
             <div id="player-result">
@@ -69,18 +79,28 @@
             </div>
           </div>
           <div id="computer-choice-box">
-            <h4>Computer</h4>
-            <div id="player-choice-rock">Rock</div>
-            <div id="player-choice-rock">Paper</div>
-            <div id="player-choice-rock">Scissors</div>
-          </div>
+           
+              <h4 id="computer-name-display">Computer</h4>
+
+         
+            <div id="computer-choice-elements-box">
+              <img src="rock.png" id="computer-choice-rock" alt="">
+            
+            
+              <img src="paper.png" id="computer-choice-paper" alt="">
+            
+      
+              <img src="scissors.png" id="computer-choice-scissors" alt="">
+            </div>
+            </div>
+            
           <div id="result-box">
             <h3 id="round-result-display">Result</h3>
           </div>
          
         
         </div>
-        <div id="game-over-container">
+        <div class="game-colors" id="game-over-container">
           <div id="final-score-box">
             <h3 id="final-compared-score-display">Player Score : Computer Score</h3>
           </div>
@@ -89,7 +109,7 @@
           </div>
             <div id="end-buttons-box">
               <button id="rematch-button">Rematch</button>
-              <button id="return-to-main-menu-button">Return to main menu</button>
+              <button id="return-to-main-menu-button">Main Menu</button>
             </div>
 
           </div>
