@@ -1,3 +1,5 @@
+@import url("CSS/menu.css");
+
 * {
   outline: solid 1px green;
 }
@@ -30,53 +32,6 @@ header {
   background-color: #d5d5d3;
 }
 
-#menu-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-#logo-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #d5d5d3;
-}
-
-.logo {
-  padding: 0rem 1rem 0rem 1rem;
-  font-size: 1.5rem;
-  background-color: #fdd947;
-}
-
-#nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d5d5d3;
-}
-
-nav {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-nav a {
-  padding: 0rem 2rem 0rem 2rem;
-  text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-}
-
-#menu-container {
-  display: none;
-  padding-right: 2rem;
-}
-#menu-button-box {
-  display: none;
-  margin: 0;
-}
-
 main {
   grid-area: main;
   display: flex;
@@ -103,15 +58,15 @@ main > * {
 }
 
 #main-menu-container {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1/3vw 1/3vw 1/3vw;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "title title title"
+    ". title ."
     ". settings ."
-    "start-button start-button start-button";
+    ". start-button .";
 }
 
 .game-colors {
@@ -157,11 +112,11 @@ button:hover {
 }
 
 #game-running-container {
-  height: 90%;
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  display: none;
+  grid-template-columns: 1fr 25rem 1fr;
+  grid-template-rows: 1fr 25rem 1fr;
   grid-template-areas:
     "score score score"
     "choice1 comparison choice2"
@@ -185,7 +140,7 @@ button:hover {
   grid-area: choice1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -206,13 +161,12 @@ margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 33%;
 }
 #computer-choice-box {
   grid-area: choice2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -249,15 +203,15 @@ margin-bottom: 1rem;
 }
 
 #game-over-container {
-  height: 90%;
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  display: none;
+  grid-template-columns: 1/3vw 1/3vw 1/3vw;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "score score score"
+    ". score ."
     ". final-result ."
-    "buttons buttons buttons";
+    ". buttons .";
 }
 
 #final-score-box {
@@ -297,7 +251,35 @@ footer {
   background-color: #d5d5d3;
 }
 
+/* ANIMATIONS PLAYER */
+.player-choice-animation {
+  position: relative;
+  animation-name: player_element;
+  animation-duration: 2s;  
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+@keyframes player_element {
+  from {left: 0rem;}
+  to {left: 14rem;}
+}
+
+/* ANIMATIONS COMPUTER */
+.computer-choice-animation {
+  position: relative;
+  animation-name: computer_element;
+  animation-duration: 2s;  
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes computer_element {
+  from {right: 0rem;}
+  to {right: 14rem;}
+}
+
 @media screen and (max-width: 700px) {
+
   header {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -343,11 +325,11 @@ footer {
   }
 
   #game-running-container {
-    height: 90%;
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    display: none;
+    grid-template-columns: 1fr 15rem 1fr;
+    grid-template-rows: 1fr 20rem 1fr;
     grid-template-areas:
       "player-choice player-choice player-choice"
       "player-score alt-comparison computer-score"
@@ -465,7 +447,7 @@ footer {
 }
 @keyframes player_element {
   from {top: 0rem;}
-  to {top: 9.4rem;}
+  to {top: 12.65rem;}
 }
 
 /* ANIMATIONS COMPUTER */
@@ -479,10 +461,41 @@ footer {
 
 @keyframes computer_element {
   from {top: 0rem;}
-  to {top: -9.4rem;}
+  to {top: -12.65rem;}
 }
 
+}
 
+@media screen and (max-width: 400px) {
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #252525;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 9.7fr;
+    grid-template-areas:
+      "header"
+      "main";
+      overflow-y: hidden;
+  }
+
+  #home-container {
+    display: none;
+    height: 100%;
+    background-color: lightslategray;
+  }
+
+  section {
+    height: 100%;
+    width: 100%;
+  }
+
+  footer {
+    display: none;
+  }
 
 
 

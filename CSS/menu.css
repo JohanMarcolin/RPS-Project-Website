@@ -1,0 +1,46 @@
+#menu-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #d5d5d3;
+  }
+  
+  .logo {
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: 1.5rem;
+    background-color: #fdd947;
+  }
+  
+  #nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d5d5d3;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  nav a {
+    padding: 0rem 2rem 0rem 2rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  #menu-container {
+    display: none;
+    padding-right: 2rem;
+  }
+  #menu-button-box {
+    display: none;
+    margin: 0;
+  }
