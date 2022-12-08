@@ -1,0 +1,182 @@
+#main-menu-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1/3vw 1/3vw 1/3vw;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". title ."
+    ". settings ."
+    ". start-button .";
+}
+
+.game-colors {
+  background-image: radial-gradient(
+    circle,
+    #2d3236,
+    #262a2d,
+    #1f2224,
+    #181b1c,
+    #111314
+  );
+  color: #ffffff;
+}
+
+button {
+  display: inline-block;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 0.15rem solid #cccccc;
+  font-weight: 400;
+  width: 7rem;
+  color: #000000;
+  background-color: #cccccc;
+  text-align: center;
+}
+button:hover {
+  border-color: #7a7a7a;
+}
+
+#title-box {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+#settings-box {
+  grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#start-button-box {
+  grid-area: start-button;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#game-running-container {
+  height: 100%;
+  width: 100%;
+  display: none;
+  grid-template-columns: 1fr 25rem 1fr;
+  grid-template-rows: 1fr 25rem 1fr;
+  grid-template-areas:
+    "score score score"
+    "choice1 comparison choice2"
+    "result result result";
+}
+#compared-score-box {
+  grid-area: score;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#player-score-display {
+  display: none;
+}
+#computer-score-display {
+  display: none;
+}
+#player-choice-box {
+  grid-area: choice1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#player-name-display {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#player-choice-elements-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#comparison-box {
+  grid-area: comparison;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#computer-choice-box {
+  grid-area: choice2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#player-choice-box img,
+#computer-choice-box img {
+  width: 3rem;
+}
+
+#computer-name-display {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#computer-choice-elements-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#result-box {
+  grid-area: result;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#split-result-player {
+  display: none;
+}
+
+#split-result-computer {
+  display: none;
+}
+
+#game-over-container {
+  height: 100%;
+  width: 100%;
+  display: none;
+  grid-template-columns: 1/3vw 1/3vw 1/3vw;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". score ."
+    ". final-result ."
+    ". buttons .";
+}
+
+#final-score-box {
+  grid-area: score;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#final-result-box {
+  grid-area: final-result;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#end-buttons-box {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
