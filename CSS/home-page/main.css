@@ -1,0 +1,72 @@
+
+#home-container {
+    background-color: rgb(255, 255, 255);
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "header-box"
+    "about-box";
+}
+
+#header-box {
+grid-area: header-box;
+display: flex;
+align-self: flex-start;
+}
+#header-img {
+    width: 100%;
+    position: relative;
+}
+
+#header-img-text-box {
+    position: absolute;
+    margin: 2rem;
+    color: white;
+    
+}
+#header-img-text-title {
+    font-size: 5vw;
+    margin: 0;
+}
+
+#header-img-text {
+    font-size: 2vw;
+}
+
+#about-box {
+grid-area: about-box;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr;
+grid-template-areas:
+"about-img about-text";
+}
+
+#about-me-img {
+    grid-area: about-img;
+    width: 100%;
+}
+#about-me-text-box {
+    grid-area: about-text;
+     position: relative;
+    margin: 2rem;
+    color: black;
+   
+}
+#about-me-title {
+ font-size: 5vw;
+    margin: 0;
+}
+#about-me-text {
+    font-size: 2vw;
+}
+
+#links-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#links-box a {
+    padding: 0rem 1rem 0rem 1rem;
+}

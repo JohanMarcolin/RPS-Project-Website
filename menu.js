@@ -25,8 +25,8 @@ export let containers = [
   rulesContainer,
   statsContainer,
 ];
-
-homeContainer.style.display = "flex";
+//HOME CONTAINER
+homeContainer.style.display = "grid";
 
 export function setupMenu() {
   togglesMenuWhenClicked(menuButton, menuContainer);
@@ -51,8 +51,9 @@ export function togglesContentWhenClicked(button, content) {
       let element = containers[i];
 
       if (element === content) {
-        element.style.display = "flex";
-      } else {
+        element.style.display = "grid";
+      }
+      else {
         element.style.display = "";
       }
     }
