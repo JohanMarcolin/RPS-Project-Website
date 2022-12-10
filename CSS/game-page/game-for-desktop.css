@@ -1,21 +1,5 @@
 #game-container {
   display: none;
-  background-color: lightslategray;
-}
-
-#main-menu-container {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1/3vw 1/3vw 1/3vw;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    ". title ."
-    ". settings ."
-    ". start-button .";
-}
-
-.game-colors {
   background-image: radial-gradient(
     circle,
     #2d3236,
@@ -24,6 +8,19 @@
     #181b1c,
     #111314
   );
+}
+
+#main-menu-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "title"
+    "settings"
+    "start-button";
+}
+
+.game-colors {
   color: #ffffff;
 }
 
@@ -65,8 +62,7 @@ button:hover {
 }
 
 #game-running-container {
-  height: 100%;
-  width: 100%;
+  
   display: none;
   grid-template-columns: 1fr 25rem 1fr;
   grid-template-rows: 1fr 25rem 1fr;
@@ -155,15 +151,13 @@ button:hover {
 }
 
 #game-over-container {
-  height: 100%;
-  width: 100%;
   display: none;
-  grid-template-columns: 1/3vw 1/3vw 1/3vw;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    ". score ."
-    ". final-result ."
-    ". buttons .";
+    "score"
+    "final-result"
+    "buttons";
 }
 
 #final-score-box {
@@ -185,3 +179,4 @@ button:hover {
   align-items: center;
   justify-content: flex-start;
 }
+

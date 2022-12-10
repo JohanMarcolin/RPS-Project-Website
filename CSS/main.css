@@ -1,5 +1,5 @@
 * {
-    outline: solid 1px green;
+   /*  outline: solid 1px green; */
   }
   
   html {
@@ -12,11 +12,10 @@
     height: 100%;
     margin: auto;
     padding: 0;
-    background-color: #252525;
-    background-color: white;
+    background-color: rgb(30, 33, 39);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 4rem auto 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
     grid-template-areas:
       "header"
       "main"
@@ -28,7 +27,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    background-color: #d5d5d3;
   }
   
   main {
@@ -36,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #444444;
+/*     background-color: #444444; */
   }
   
   main > * {
@@ -61,5 +59,4 @@
   
   footer {
     grid-area: footer;
-    background-color: #d5d5d3;
   }

@@ -8,20 +8,19 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #d5d5d3;
 }
 
 .logo {
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 1rem 0rem 5vw;
   font-size: 1.5rem;
-  background-color: #fdd947;
+  color: white;
 }
 
 #nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d5d5d3;
+  background-color: rgb(30, 33, 39);
 }
 
 nav {
@@ -30,10 +29,15 @@ nav {
 }
 
 nav a {
-  padding: 0rem 2rem 0rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 1.2rem;
+}
+
+nav a:hover {
+  background-color: rgb(44, 48, 56);
+  color: white;
 }
 
 #menu-container {
@@ -62,7 +66,7 @@ nav a {
   #nav-container {
     grid-area: nav;
     position: absolute;
-    top: 3.82rem;
+    top: 80px;
     z-index: 1;
     width: 100%;
     display: none;
