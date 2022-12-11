@@ -1,0 +1,33 @@
+#stats-container {
+    display: none;
+    background-color: lightslategray;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "player-title"
+        "player-stats"
+        "computer-title"
+        "computer-stats";
+  }
+
+  .stats-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #player-title {
+    grid-area: player-title;
+  }
+
+  #player-stats-box {
+    grid-area: player-stats;
+  }
+
+  #computer-title {
+    grid-area: computer-title;
+  }
+
+  #computer-stats-box {
+    grid-area: computer-stats;
+  }

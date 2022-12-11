@@ -1,0 +1,44 @@
+#rules-container {
+    display: none;
+    background-color: lightslategray;
+  }
+#rules-container h2 {
+    text-align: center;
+  }
+
+  
+#rules-img-box img {
+    width: 50px;
+    padding: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "row1"
+    "row2"
+    "row3"
+    "row4";
+}
+#rules-img-box h3 {
+   align-self: center;
+   padding: 1rem;
+}
+
+.rules-row {
+display:flex;
+text-align: center;
+justify-content: center;
+}
+
+
+#rules-row1 {
+    grid-area: row-1;
+}
+#rules-row2 {
+    grid-area: row-2;
+}
+#rules-row3 {
+    grid-area: row-3;
+}
+#rules-row4 {
+    grid-area: row-4;
+}
