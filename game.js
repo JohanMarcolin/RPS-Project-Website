@@ -25,7 +25,6 @@ import {
   rematchButton,
   returnToMainMenuButton,
   /* stats elements */
-  playerStats,
   computerStats,
 } from "./elements.js";
 
@@ -36,12 +35,17 @@ import {
   handleStartButton,
 } from "./events.js";
 import { choicesAreComparedAndWinnerIsDeclared } from "./logic.js";
-
+import { statsPrototype } from "./stats.js";
 export let game = {
   settings: { nameWasChosen: false, bestOf: null },
   stats: {
-    player: { choices: [], wins: 0, losses: 0 },
-    computer: { choices: [], wins: 0, losses: 0 },
+    player: { choices: { rock: 0, paper: 0, scissors: 0 }, 
+    wins: 0, losses: 0 },
+    computer: {
+      choices: { rock: 0, paper: 0, scissors: 0 },
+      wins: 0,
+      losses: 0,
+    },
   },
 };
 
@@ -87,25 +91,19 @@ export function runGame() {
     player.choice.made = false;
   }
   console.log("Player: " + player.choice.type);
+  console.log(game.stats.player.choices.rock)
 
   //computer chooses R, P or S
   computer.choice.type = choices[Math.floor(Math.random() * (3 - 0) + 0)];
   console.log("Computer: " + computer.choice.type);
   animatesComputerElement(computer, "computer-choice-animation");
 
-  //stats recording - choices
-  game.stats.player.choices.push(player.choice);
-  game.stats.computer.choices.push(computer.choice);
+
   //game logic
   choicesAreComparedAndWinnerIsDeclared();
 
-  //stats prototype
-  playerStats.innerText =
-    "Player wins: " + game.stats.player.wins + 
-    " Losses: " + game.stats.player.losses;
-  computerStats.innerText =
-    "Computer wins: " + game.stats.computer.wins + 
-    " Losses: " + game.stats.computer.losses;
+      //stats prototype
+statsPrototype();
 
 }
 

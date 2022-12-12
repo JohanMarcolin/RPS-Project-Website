@@ -28,5 +28,13 @@ export let finalResult = document.querySelector("#final-result-display");
 export let rematchButton = document.querySelector("#rematch-button");
 export let returnToMainMenuButton = document.querySelector("#return-to-main-menu-button");
 //STATS
-export let playerStats = document.querySelector("#player-stats");
+export let playerPieChartData1 = document.querySelector("#player-stats-wins-and-losses");
+export let playerPieChartData2 = document.querySelector("#player-stats-choices");
+
+export let playerStatsWins = document.querySelector("#player-stats-wins");
+export let playerStatsLosses = document.querySelector("#player-stats-losses");
+export let playerStatsRock = document.querySelector("#player-stats-rock");
+export let playerStatsPaper = document.querySelector("#player-stats-paper");
+export let playerStatsScissors = document.querySelector("#player-stats-scissors");
+
 export let computerStats = document.querySelector("#computer-stats");

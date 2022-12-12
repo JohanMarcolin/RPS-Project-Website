@@ -2,7 +2,7 @@
     display: none;
     background-color: lightslategray;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr 1fr 1fr;
         grid-template-areas:
         "player-title"
         "player-stats"
@@ -14,7 +14,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  
   }
+
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+.data-box {
+  margin-top: 1rem;
+ display: flex;
+ flex-direction: column;
+align-items: center;
+flex-wrap: wrap;
+justify-content: center;
+}
+.data-box h4 {
+  margin: 0;
+  padding: 0;
+}
+
 
   #player-title {
     grid-area: player-title;
@@ -22,6 +44,59 @@
 
   #player-stats-box {
     grid-area: player-stats;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 50px 150px;
+    gap: 0rem 3rem;
+    grid-template-areas: 
+    "chart-title1 chart-title2"
+    "pie-chart1 pie-chart2";
+  }
+
+  #player-chart-title1 {
+    grid-area: chart-title1;
+  }
+  #player-chart-title2 {
+    grid-area: chart-title2;
+  }
+  #player-stats-wins-and-losses {
+    grid-area: pie-chart1;
+    background-image: conic-gradient(
+      rgb(31, 125, 233) 0 180deg, 
+      rgb(235, 59, 50) 0 180deg);
+  }
+
+  .wins {
+    background-color: rgb(31, 125, 233);
+    width: 10px;
+    height: 10px;
+  }
+  .losses {
+    background-color: rgb(235, 59, 50);
+    width: 10px;
+    height: 10px;
+  }
+  #player-stats-choices {
+    grid-area: pie-chart2;
+    background-image: conic-gradient(
+      pink 0 33%, 
+      lightblue 0 66%, 
+      orange 0);
+  }
+  .rock {
+    background-color: orange;
+    width: 10px;
+    height: 10px;
+  }
+  .paper {
+    background-color: pink;
+    width: 10px;
+    height: 10px;
+  }
+  .scissors {
+    background-color: lightblue;
+     width: 10px;
+    height: 10px;
   }
 
   #computer-title {

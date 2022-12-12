@@ -65,18 +65,21 @@ export function handleClick(event) {
   if (event.target.id === "player-choice-rock") {
     player.choice.made = true;
     player.choice.type = "rock";
+    game.stats.player.choices.rock++;
     animatesPlayerElement(player, rockElement, "player-choice-animation")
     return player.choice;
   }
   if (event.target.id === "player-choice-paper") {
     player.choice.made = true;
     player.choice.type = "paper";
+    game.stats.player.choices.paper++;
     animatesPlayerElement(player, paperElement, "player-choice-animation")
     return player.choice;
   }
   if (event.target.id === "player-choice-scissors") {
     player.choice.made = true;
     player.choice.type = "scissors";
+    game.stats.player.choices.scissors++;
     animatesPlayerElement(player, scissorsElement, "player-choice-animation")
     return player.choice;
   }
