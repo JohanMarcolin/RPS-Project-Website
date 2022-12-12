@@ -1,5 +1,5 @@
 * {
-   outline: solid 1px green;
+outline: solid 1px green;
   }
   
   html {
@@ -15,7 +15,7 @@
     background-color: rgb(30, 33, 39);
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: 5fr 85fr 10fr;
+    grid-template-rows: 70px max-content max-content;
     grid-template-areas:
       "header"
       "main"

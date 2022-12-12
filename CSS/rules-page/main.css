@@ -1,44 +1,70 @@
 #rules-container {
-    display: none;
-    background-color: lightslategray;
-  }
+  display: none;
+  background-color: lightslategray;
+}
 #rules-container h2 {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  
 #rules-img-box img {
-    width: 50px;
-    padding: 2rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
+  width: 50px;
+  padding: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
     "row1"
     "row2"
     "row3"
     "row4";
 }
 #rules-img-box h3 {
-   align-self: center;
-   padding: 1rem;
+  align-self: center;
+  padding: 1rem;
 }
 
 .rules-row {
-display:flex;
-text-align: center;
-justify-content: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
+.alternating-imgs {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 100%;
+  animation-name: img-loop;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes img-loop {
+  0% {
+    opacity: 1;
+    background-image: url("../../resources/img/rock.png");
+  }
+
+  50% {
+    opacity: 1;
+    background-image: url("../../resources/img/paper.png");
+  }
+  100% {
+    opacity: 1;
+    background-image: url("../../resources/img/scissors.png");
+  }
+}
 
 #rules-row1 {
-    grid-area: row-1;
+  grid-area: row-1;
 }
 #rules-row2 {
-    grid-area: row-2;
+  grid-area: row-2;
 }
 #rules-row3 {
-    grid-area: row-3;
+  grid-area: row-3;
 }
 #rules-row4 {
-    grid-area: row-4;
+  grid-area: row-4;
 }

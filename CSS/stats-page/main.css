@@ -2,7 +2,7 @@
     display: none;
     background-color: lightslategray;
         grid-template-columns: 1fr;
-        grid-template-rows: 50px 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr 50px 1fr;
         grid-template-areas:
         "player-title"
         "player-stats"
@@ -10,11 +10,13 @@
         "computer-stats";
   }
 
+  #stats-container h2, h3 {
+    text-align: center;
+  }
   .stats-box {
     display: flex;
     justify-content: center;
     align-items: center;
-  
   }
 
   .pie-chart {
@@ -26,17 +28,53 @@
 
 .data-box {
   margin-top: 1rem;
- display: flex;
- flex-direction: column;
-align-items: center;
-flex-wrap: wrap;
-justify-content: center;
+display: grid;
+grid-template-columns: 10px 150px;
+grid-template-rows: 20px 1fr 1fr;
+align-self: center;
+}
+
+span {
+  align-self: center;
+}
+
+.wins-data {
+  display: flex;
+  align-items: center;
 }
 .data-box h4 {
   margin: 0;
+  margin-left: 10px;
   padding: 0;
+  font-weight: 500;
 }
 
+.wins {
+  background-color: rgb(31, 125, 233);
+  width: 10px;
+  height: 10px;
+}
+.losses {
+  background-color: rgb(235, 59, 50);
+  width: 10px;
+  height: 10px;
+}
+
+.rock {
+  background-color: orange;
+  width: 10px;
+  height: 10px;
+}
+.paper {
+  background-color: pink;
+  width: 10px;
+  height: 10px;
+}
+.scissors {
+  background-color: lightblue;
+   width: 10px;
+  height: 10px;
+}
 
   #player-title {
     grid-area: player-title;
@@ -66,16 +104,7 @@ justify-content: center;
       rgb(235, 59, 50) 0 180deg);
   }
 
-  .wins {
-    background-color: rgb(31, 125, 233);
-    width: 10px;
-    height: 10px;
-  }
-  .losses {
-    background-color: rgb(235, 59, 50);
-    width: 10px;
-    height: 10px;
-  }
+  
   #player-stats-choices {
     grid-area: pie-chart2;
     background-image: conic-gradient(
@@ -83,21 +112,7 @@ justify-content: center;
       lightblue 0 66%, 
       orange 0);
   }
-  .rock {
-    background-color: orange;
-    width: 10px;
-    height: 10px;
-  }
-  .paper {
-    background-color: pink;
-    width: 10px;
-    height: 10px;
-  }
-  .scissors {
-    background-color: lightblue;
-     width: 10px;
-    height: 10px;
-  }
+ 
 
   #computer-title {
     grid-area: computer-title;
@@ -105,4 +120,33 @@ justify-content: center;
 
   #computer-stats-box {
     grid-area: computer-stats;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 50px 150px;
+    gap: 0rem 3rem;
+    grid-template-areas: 
+    "chart-title1 chart-title2"
+    "pie-chart1 pie-chart2";
+  }
+
+  #computer-chart-title1 {
+    grid-area: chart-title1;
+  }
+  #computer-chart-title2 {
+    grid-area: chart-title2;
+  }
+  #computer-stats-wins-and-losses {
+    grid-area: pie-chart1;
+    background-image: conic-gradient(
+      rgb(31, 125, 233) 0 180deg, 
+      rgb(235, 59, 50) 0 180deg);
+  }
+
+  
+  #computer-stats-choices {
+    grid-area: pie-chart2;
+    background-image: conic-gradient(
+      pink 0 33%, 
+      lightblue 0 66%, 
+      orange 0);
   }

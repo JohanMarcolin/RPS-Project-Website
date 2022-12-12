@@ -25,7 +25,7 @@ import {
   rematchButton,
   returnToMainMenuButton,
   /* stats elements */
-  computerStats,
+
 } from "./elements.js";
 
 import {
@@ -35,7 +35,7 @@ import {
   handleStartButton,
 } from "./events.js";
 import { choicesAreComparedAndWinnerIsDeclared } from "./logic.js";
-import { statsPrototype } from "./stats.js";
+import { statsPrototypeForPlayer, statsPrototypeForComputer } from "./stats.js";
 export let game = {
   settings: { nameWasChosen: false, bestOf: null },
   stats: {
@@ -97,13 +97,24 @@ export function runGame() {
   computer.choice.type = choices[Math.floor(Math.random() * (3 - 0) + 0)];
   console.log("Computer: " + computer.choice.type);
   animatesComputerElement(computer, "computer-choice-animation");
+  //collecting computer stats
+  if (computer.choice.type === "rock") {
+    game.stats.computer.choices.rock++;
+  }
+  if (computer.choice.type === "paper") {
+    game.stats.computer.choices.paper++;
+  }
+  if (computer.choice.type === "scissors") {
+    game.stats.computer.choices.scissors++;
+  }
 
 
   //game logic
   choicesAreComparedAndWinnerIsDeclared();
 
       //stats prototype
-statsPrototype();
+statsPrototypeForPlayer();
+statsPrototypeForComputer();
 
 }
 
