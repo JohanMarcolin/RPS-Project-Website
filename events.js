@@ -1,29 +1,17 @@
 import { game, player, computer } from "./game.js";
 import {
-  /* main menu elements */
   mainMenu,
-  nameInput,
   check3,
   check5,
   startButton,
-  /* game running elements */
   gameRunning,
-  comparedScore,
-  playerScore,
-  computerScore,
-  playerName,
   roundResult,
   splitRoundResultPlayer,
   splitRoundResultComputer,
   rockElement,
   paperElement,
   scissorsElement,
-  /*  game over elements */
   gameOver,
-  finalComparedScore,
-  finalResult,
-  rematchButton,
-  returnToMainMenuButton,
 } from "./elements.js";
 import { animatesPlayerElement } from "./animations.js";
 
@@ -35,78 +23,77 @@ export function handleChange(event) {
   }
 
   if (event.target.id === "check-3") {
-    if (!check3.checked) {
-      game.settings.bestOf = null;
-      return game.settings;
-    } else {
-      game.settings.bestOf = 3;
-      return game.settings;
-    }
+    assignsThisAmountOfRoundsWhenCheckboxIsToggled(check3, 3);
   }
 
   if (event.target.id === "check-5") {
-    if (!check5.checked) {
+    assignsThisAmountOfRoundsWhenCheckboxIsToggled(check5, 5);
+  }
+
+  function assignsThisAmountOfRoundsWhenCheckboxIsToggled(checkbox, rounds) {
+    if (!checkbox.checked) {
       game.settings.bestOf = null;
       return game.settings;
     } else {
-      game.settings.bestOf = 5;
+      game.settings.bestOf = rounds;
       return game.settings;
     }
   }
 }
 
 export function handleClick(event) {
-  if(player.choice.animating) { return };
+  if (player.choice.animating) {
+    return;
+  }
 
   if (event.target.id === "start-button") {
     mainMenu.style.display = "none";
     gameRunning.style.display = "grid";
   }
   if (event.target.id === "player-choice-rock") {
-    player.choice.made = true;
-    player.choice.type = "rock";
-    game.stats.player.choices.rock++;
-    animatesPlayerElement(player, rockElement, "player-choice-animation")
-    return player.choice;
+    setsAndRecordsChoice("rock");
+    animatesPlayerElement(rockElement, "player-choice-animation");
   }
   if (event.target.id === "player-choice-paper") {
-    player.choice.made = true;
-    player.choice.type = "paper";
-    game.stats.player.choices.paper++;
-    animatesPlayerElement(player, paperElement, "player-choice-animation")
-    return player.choice;
+    setsAndRecordsChoice("paper");
+    animatesPlayerElement(paperElement, "player-choice-animation");
   }
   if (event.target.id === "player-choice-scissors") {
-    player.choice.made = true;
-    player.choice.type = "scissors";
-    game.stats.player.choices.scissors++;
-    animatesPlayerElement(player, scissorsElement, "player-choice-animation")
-    return player.choice;
+    setsAndRecordsChoice("scissors");
+    animatesPlayerElement(scissorsElement, "player-choice-animation");
   }
+
   if (event.target.id === "rematch-button") {
-    player.score = 0;
-    computer.score = 0;
-    gameOver.style.display = "none";
-    gameRunning.style.display = "grid";
-    roundResult.innerText = "Result";
-    splitRoundResultPlayer.innerText = " ";
-    splitRoundResultComputer.innerText = " ";
-    return player.score, computer.score;
+    clearsPreviousGameFromScreenAndRestartsFromThisContainer(gameRunning);
   }
 
   if (event.target.id === "return-to-main-menu-button") {
+    clearsPreviousGameFromScreenAndRestartsFromThisContainer(mainMenu);
+  }
+
+  function setsAndRecordsChoice(choice) {
+    player.choice.made = true;
+    player.choice.type = choice;
+    if (choice === "rock") {
+      game.stats.player.choices.rock++;
+    } else if (choice === "paper") {
+      game.stats.player.choices.paper++;
+    } else if (choice === "scissors") {
+      game.stats.player.choices.scissors++;
+    }
+  }
+  function clearsPreviousGameFromScreenAndRestartsFromThisContainer(container) {
     player.score = 0;
     computer.score = 0;
     gameOver.style.display = "none";
-    mainMenu.style.display = "grid";
+    container.style.display = "grid";
     roundResult.innerText = "Result";
     splitRoundResultPlayer.innerText = " ";
     splitRoundResultComputer.innerText = " ";
-    return player.score, computer.score;
   }
 }
 
-export function handleCheckbox() {
+export function handleCheckbox(check3, check5) {
   if (check3.checked) {
     check5.setAttribute("disabled", "");
   } else if (!check3.checked) {
@@ -119,7 +106,7 @@ export function handleCheckbox() {
   }
 }
 
-export function handleStartButton() {
+export function handleStartButton(startButton) {
   if (
     player.name === null ||
     player.name === "" ||

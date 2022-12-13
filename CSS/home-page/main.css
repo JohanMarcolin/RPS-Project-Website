@@ -70,7 +70,7 @@
     display: block;
     object-fit: cover;
     width: 100%;
-    background-image: url("../../resources/img/flippedremoved.png");
+    background-image: url("../../resources/img/flipped_bw.png");
     background-position: 1000px 0px;
     background-size: 1000px;
   }

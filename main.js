@@ -1,11 +1,7 @@
-import { setupMenu } from "./menu.js";
-import { runGame } from "./game.js"
+import { setupMenu, setsStartPageTo } from "./sitemenu.js";
+import { runGame } from "./game.js";
+import { homeContainer } from "./elements.js";
 
 setupMenu();
-
-
-    runGame();
-
-
-
-
+setsStartPageTo(homeContainer);
+runGame();

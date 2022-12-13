@@ -1,225 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-   
-    <link rel="stylesheet" href="styles.css" />
-  <body>
-    <header>
-        <div id="logo-container">
-            <h1 class="logo">RPS</h1>
-        </div>
-        <div id="menu-container">
-          <h2 id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> </h2>
-        </div>
-        <div id="nav-container">
-            <nav>
-              <a id="nav-home" href="#home">Home</a>
-              <a id="nav-game" href="#game">Game</a>
-              <a id="nav-rules" href="#rules">Rules</a>
-              <a id="nav-stats" href="#stats">Stats</a>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-      <section id="home-container">
-        <div id="header-box">
-          <img id="header-img" src="resources/img/mountainimg.JPG" alt="sky">
-          <div id="header-img-text-box">
-            <h2 id="header-img-text-title">ROCK <br> PAPER <br> SCISSORS</h2>
-            <p id="header-img-text">
-              A responsive website as part of an ongoing frontend course. The goal was to make a responsive website with a functional rock paper scissors game.
-            </p>
-          </div>
-          <div id="img2"></div>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
 
-      <article id="game-container">
-        <div class="game-colors" id="main-menu-container">
-          <div id="title-box">
-            <h2>Rock Paper Scissors</h2>
-            <div id="interactive-logo">
+  <link rel="stylesheet" href="styles.css" />
+
+<body>
+  <header>
+    <div id="logo-container">
+      <h1 class="logo">RPS</h1>
+    </div>
+    <div id="menu-container">
+      <h2 id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+          fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg> </h2>
+    </div>
+    <div id="nav-container">
+      <nav>
+        <a id="nav-home" href="#home">Home</a>
+        <a id="nav-game" href="#game">Game</a>
+        <a id="nav-rules" href="#rules">Rules</a>
+        <a id="nav-stats" href="#stats">Stats</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home-container">
+      <div id="header-box">
+        <img id="header-img" src="resources/img/mountain_bw.png" alt="sky">
+        <div id="header-img-text-box">
+          <h2 id="header-img-text-title">ROCK <br> PAPER <br> SCISSORS</h2>
+          <p id="header-img-text">
+            A responsive website as part of an ongoing frontend course. The goal was to make a responsive website with a
+            functional rock paper scissors game.
+          </p>
+        </div>
+        <div id="img2"></div>
+      </div>
+    </section>
+
+    <article id="game-container">
+      <div class="game-colors" id="main-menu-container">
+        <div id="title-box">
+          <h2>Rock Paper Scissors</h2>
+          <div id="interactive-logo">
             <img src="resources/img/RPSPlaceholder.png" width="150rem" alt="placeholder logo of three hands">
           </div>
-          </div>
-          <div id="settings-box">
-            <h3>Settings</h3>
-            <h3>Player name: <br><input type="text" id="player-name"></h3>
-            <h3>Best of: <br> 3 <input type="checkbox" id="check-3"> 5 <input type="checkbox" id="check-5">  </h3>
-          </div>
-          <div id="start-button-box">
-            <button id="start-button">Start Game</button>
-          </div>
         </div>
-
-        <div class="game-colors" id="game-running-container">
-          <div id="compared-score-box">
-            <h3 id="compared-score-display">Player Score : Computer Score</h3>
-          </div>
-          <div id="player-score-box">
-            <h4 id="player-score-display">player.score from js</h4>
-          </div>
-          <div id="computer-score-box">
-            <h4 id="computer-score-display">computer.score from js</h4>
-          </div>
-          <div id="player-choice-box">
-           
-              <h4 id="player-name-display">Player</h4>
-            
-    
-            <div id="player-choice-elements-box">
-              <img src="resources/img/rock.png" id="player-choice-rock" alt="">
-           
-              <img src="resources/img/paper.png" id="player-choice-paper" alt="">
-            
-           
-              <img src="resources/img/scissors.png" id="player-choice-scissors" alt="">
-          </div>
-          </div>
-          <div id="comparison-box">
-            <div id="player-result">
-              <h4 id="split-result-player">Result</h4>
-            </div>
-            <h3>Comparison</h3>
-            <div id="computer-result">
-              <h4 id="split-result-computer">Result</h4>
-            </div>
-          </div>
-          <div id="computer-choice-box">
-           
-              <h4 id="computer-name-display">Computer</h4>
-
-         
-            <div id="computer-choice-elements-box">
-              <img src="resources/img/rock.png" id="computer-choice-rock" alt="">
-            
-            
-              <img src="resources/img/paper.png" id="computer-choice-paper" alt="">
-            
-      
-              <img src="resources/img/scissors.png" id="computer-choice-scissors" alt="">
-            </div>
-            </div>
-            
-          <div id="result-box">
-            <h3 id="round-result-display">Result</h3>
-          </div>
-         
-        
+        <div id="settings-box">
+          <h3>Settings</h3>
+          <h3>Player name: <br><input type="text" id="player-name"></h3>
+          <h3>Best of: <br> 3 <input type="checkbox" id="check-3"> 5 <input type="checkbox" id="check-5"> </h3>
         </div>
-        <div class="game-colors" id="game-over-container">
-          <div id="final-score-box">
-            <h3 id="final-compared-score-display">Player Score : Computer Score</h3>
-          </div>
-          <div id="final-result-box">
-            <h3 id="final-result-display">Final result</h3>
-          </div>
-            <div id="end-buttons-box">
-              <button id="rematch-button">Rematch</button>
-              <button id="return-to-main-menu-button">Main Menu</button>
-            </div>
-
-          </div>
+        <div id="start-button-box">
+          <button id="start-button">Start Game</button>
         </div>
-      </article>
-      <section id="rules-container">
-        <div id="rules-img-box">
-          <h2>Game Rules</h2>
-<div id="rules-row1" class="rules-row">
-  <img src="resources/img/rock.png" alt=""> <h3>beats </h3> <img src="resources/img/scissors.png"alt="">
-</div>
-           <div id="rules-row2" class="rules-row">
-
-             <img src="resources/img/paper.png"alt=""> <h3>beats </h3> <img src="resources/img/rock.png" alt="">
-           </div>
-
-       <div id="rules-row3" class="rules-row">
-         <img src="resources/img/scissors.png"alt=""> <h3>beats </h3> <img src="resources/img/paper.png"alt="">
-       </div>
-
-       <div id="rules-row4" class="rules-row">
-         <div class="alternating-imgs"></div> <h3>draws </h3> <div class="alternating-imgs"></div>
-       </div>
-        </div>
-        </div>
-
-       
-
-
-      </section>
-      <section id="stats-container">
-
-        <h2 id="player-title" class="stats-box">Player</h2>
-        <div class="stats-box" id="player-stats-box">
-          <h3 id="player-chart-title1">wins/losses</h3>
-<div id="player-data-piechart1" class="data-box">
- 
-   <span class="wins" ></span><h4 id="player-stats-wins"> wins:</h4>
-  
-  
-   <span class="losses" ></span><h4 id="player-stats-losses"> losses:</h4>
-
-</div>
-        
-    <div class="pie-chart" id="player-stats-wins-and-losses"></div>
-    <h3 id="player-chart-title2">choices</h3>
-    <div class="pie-chart" id="player-stats-choices"></div>
-    <div id="player-data-piechart2" class="data-box">
-
-  <span class="rock" ></span><h4 id="player-stats-rock"> rock:</h4>
-
-
-      <span class="paper" ></span><h4 id="player-stats-paper"> paper:</h4>
-      <span class="scissors" ></span><h4 id="player-stats-scissors"> scissors:</h4>
-    </div>
-          </div>
-         
-          <h2 id="computer-title" class="stats-box">Computer</h2>
-          <div class="stats-box" id="computer-stats-box">
-            <h3 id="computer-chart-title1">wins/losses</h3>
-  <div id="computer-data-piechart1" class="data-box">
-   
-     <span class="wins" ></span><h4 id="computer-stats-wins"> wins:</h4>
-    
-    
-     <span class="losses" ></span><h4 id="computer-stats-losses"> losses:</h4>
-  
-  </div>
-           
-  
-      <div class="pie-chart" id="computer-stats-wins-and-losses"></div>
-      <h3 id="player-chart-title2">choices</h3>
-      <div class="pie-chart" id="computer-stats-choices"></div>
-      <div id="player-data-piechart2" class="data-box">
-  
-    <span class="rock" ></span><h4 id="computer-stats-rock"> rock:</h4>
-  
-  
-        <span class="paper" ></span><h4 id="computer-stats-paper"> paper:</h4>
-        <span class="scissors" ></span><h4 id="computer-stats-scissors"> scissors:</h4>
       </div>
-            </div>
 
-        
-      </section>
-    </main>
+      <div class="game-colors" id="game-running-container">
+        <div id="compared-score-box">
+          <h3 id="compared-score-display">Player Score : Computer Score</h3>
+        </div>
+        <div id="player-score-box">
+          <h4 id="player-score-display">player.score from js</h4>
+        </div>
+        <div id="computer-score-box">
+          <h4 id="computer-score-display">computer.score from js</h4>
+        </div>
+        <div id="player-choice-box">
 
-    <footer>
-      <div id="links-box">
-        <a href="https://www.linkedin.com/in/johan-möller-a92b90149" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://github.com/jfMoller" target="_blank">
-          GitHub
-        </a>
-  </div>
-    </footer>
+          <h4 id="player-name-display">Player</h4>
 
-    <script type="module" src="main.js"></script>
-  </body>
+
+          <div id="player-choice-elements-box">
+            <img src="resources/img/rock.png" id="player-choice-rock" alt="">
+
+            <img src="resources/img/paper.png" id="player-choice-paper" alt="">
+
+
+            <img src="resources/img/scissors.png" id="player-choice-scissors" alt="">
+          </div>
+        </div>
+        <div id="comparison-box">
+          <div id="player-result">
+            <h4 id="split-result-player">Result</h4>
+          </div>
+          <h3>Comparison</h3>
+          <div id="computer-result">
+            <h4 id="split-result-computer">Result</h4>
+          </div>
+        </div>
+        <div id="computer-choice-box">
+
+          <h4 id="computer-name-display">Computer</h4>
+
+
+          <div id="computer-choice-elements-box">
+            <img src="resources/img/rock.png" id="computer-choice-rock" alt="">
+
+
+            <img src="resources/img/paper.png" id="computer-choice-paper" alt="">
+
+
+            <img src="resources/img/scissors.png" id="computer-choice-scissors" alt="">
+          </div>
+        </div>
+
+        <div id="result-box">
+          <h3 id="round-result-display">Result</h3>
+        </div>
+
+
+      </div>
+      <div class="game-colors" id="game-over-container">
+        <div id="final-score-box">
+          <h3 id="final-compared-score-display">Player Score : Computer Score</h3>
+        </div>
+        <div id="final-result-box">
+          <h3 id="final-result-display">Final result</h3>
+        </div>
+        <div id="end-buttons-box">
+          <button id="rematch-button">Rematch</button>
+          <button id="return-to-main-menu-button">Main Menu</button>
+        </div>
+
+      </div>
+      </div>
+    </article>
+    <section id="rules-container">
+      <div id="rules-img-box">
+        <h2>Game Rules</h2>
+        <div id="rules-row1" class="rules-row">
+          <img src="resources/img/rock.png" alt="">
+          <h3>beats </h3> <img src="resources/img/scissors.png" alt="">
+        </div>
+        <div id="rules-row2" class="rules-row">
+
+          <img src="resources/img/paper.png" alt="">
+          <h3>beats </h3> <img src="resources/img/rock.png" alt="">
+        </div>
+
+        <div id="rules-row3" class="rules-row">
+          <img src="resources/img/scissors.png" alt="">
+          <h3>beats </h3> <img src="resources/img/paper.png" alt="">
+        </div>
+
+        <div id="rules-row4" class="rules-row">
+          <div class="alternating-imgs"></div>
+          <h3>draws </h3>
+          <div class="alternating-imgs"></div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+    </section>
+    <section id="stats-container">
+
+      <h2 id="player-title" class="stats-box">Player</h2>
+      <div class="stats-box" id="player-stats-box">
+        <h3 id="player-chart-title1">wins/losses</h3>
+        <div id="player-data-piechart1" class="data-box">
+
+          <span class="wins"></span>
+          <h4 id="player-stats-wins"> wins:</h4>
+
+
+          <span class="losses"></span>
+          <h4 id="player-stats-losses"> losses:</h4>
+
+        </div>
+
+        <div class="pie-chart" id="player-stats-wins-and-losses"></div>
+        <h3 id="player-chart-title2">choices</h3>
+        <div class="pie-chart" id="player-stats-choices"></div>
+        <div id="player-data-piechart2" class="data-box">
+
+          <span class="rock"></span>
+          <h4 id="player-stats-rock"> rock:</h4>
+
+
+          <span class="paper"></span>
+          <h4 id="player-stats-paper"> paper:</h4>
+          <span class="scissors"></span>
+          <h4 id="player-stats-scissors"> scissors:</h4>
+        </div>
+      </div>
+
+      <h2 id="computer-title" class="stats-box">Computer</h2>
+      <div class="stats-box" id="computer-stats-box">
+        <h3 id="computer-chart-title1">wins/losses</h3>
+        <div id="computer-data-piechart1" class="data-box">
+
+          <span class="wins"></span>
+          <h4 id="computer-stats-wins"> wins:</h4>
+
+
+          <span class="losses"></span>
+          <h4 id="computer-stats-losses"> losses:</h4>
+
+        </div>
+
+
+        <div class="pie-chart" id="computer-stats-wins-and-losses"></div>
+        <h3 id="player-chart-title2">choices</h3>
+        <div class="pie-chart" id="computer-stats-choices"></div>
+        <div id="player-data-piechart2" class="data-box">
+
+          <span class="rock"></span>
+          <h4 id="computer-stats-rock"> rock:</h4>
+
+
+          <span class="paper"></span>
+          <h4 id="computer-stats-paper"> paper:</h4>
+          <span class="scissors"></span>
+          <h4 id="computer-stats-scissors"> scissors:</h4>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <div id="links-box">
+      <a href="https://www.linkedin.com/in/johan-möller-a92b90149" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://github.com/jfMoller" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>

@@ -1,32 +1,28 @@
-let menuButton = document.querySelector("#menu-button-box");
-let menuContainer = document.querySelector("#nav-container");
+import {
+  menuButton,
+  menuContainer,
+  homeButton,
+  homeContainer,
+  gameButton,
+  gameContainer,
+  rulesButton,
+  rulesContainer,
+  statsButton,
+  statsContainer,
+} from "./elements.js";
 
-let homeButton = document.querySelector("#nav-home");
-let homeContainer = document.querySelector("#home-container");
+const buttons = [homeButton, gameButton, rulesButton, statsButton];
 
-let gameButton = document.querySelector("#nav-game");
-let gameContainer = document.querySelector("#game-container");
-
-let rulesButton = document.querySelector("#nav-rules");
-let rulesContainer = document.querySelector("#rules-container");
-
-let statsButton = document.querySelector("#nav-stats");
-let statsContainer = document.querySelector("#stats-container");
-
-export let buttons = [
-    homeButton, 
-    gameButton, 
-    rulesButton, 
-    statsButton];
-    
-export let containers = [
+const containers = [
   homeContainer,
   gameContainer,
   rulesContainer,
   statsContainer,
 ];
-//HOME CONTAINER
-homeContainer.style.display = "grid";
+
+export function setsStartPageTo(container) {
+  container.style.display = "grid";
+  }
 
 export function setupMenu() {
   togglesMenuWhenClicked(menuButton, menuContainer);
@@ -52,8 +48,7 @@ export function togglesContentWhenClicked(button, content) {
 
       if (element === content) {
         element.style.display = "grid";
-      }
-      else {
+      } else {
         element.style.display = "";
       }
     }

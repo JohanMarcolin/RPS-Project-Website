@@ -15,107 +15,108 @@ import {
   computerPieChartData2,
 } from "./elements.js";
 
-import { game } from "./game.js";
+import { game, computer } from "./game.js";
 
-export function statsPrototypeForPlayer() {
-  let playerTotalGames = game.stats.player.wins + game.stats.player.losses;
-
-  let playerPercentageOfWins =
-    (game.stats.player.wins / playerTotalGames) * 100;
-  let playerPercentageOfLosses =
-    (game.stats.player.losses / playerTotalGames) * 100;
-
-  //3.6 degrees per 1 %
-
-  let playerWinRatio = playerPercentageOfWins;
-
-  playerPieChartData1.style.backgroundImage =
-    "conic-gradient(" +
-    "rgb(31, 125, 233) 0" +
-    playerWinRatio.toString() +
-    "%," +
-    "rgb(235, 59, 50) 0 100%)";
-
-  let playerTotalChoices =
-    game.stats.player.choices.rock +
-    game.stats.player.choices.paper +
-    game.stats.player.choices.scissors;
-
-let playerChoicePercentageOfRock =
-    (game.stats.player.choices.rock / playerTotalChoices) * 100;
-  let playerChoicePercentageOfPaper =
-    (game.stats.player.choices.paper / playerTotalChoices) * 100;
-  let playerChoicePercentageOfScissors =
-    (game.stats.player.choices.scissors / playerTotalChoices) * 100;
-
-  let playerPaperRatio = playerChoicePercentageOfPaper;
-  let playerScissorsRatio = playerChoicePercentageOfScissors + playerPaperRatio;
-  playerPieChartData2.style.backgroundImage =
-    "conic-gradient(" +
-    "pink 0 " +
-    playerPaperRatio.toString() +
-    "%," +
-    "lightblue 0 " +
-    playerScissorsRatio.toString() +
-    "%," +
-    "orange 0";
-
-  playerStatsWins.innerText = "wins: " + game.stats.player.wins + " (" + playerPercentageOfWins.toFixed(1) + "%)";
-  playerStatsLosses.innerText = "losses: " + game.stats.player.losses + " (" + playerPercentageOfLosses.toFixed(1) + "%)";
-  playerStatsRock.innerText = "rock: " + game.stats.player.choices.rock + " (" + playerChoicePercentageOfRock.toFixed(1) + "%)";
-  playerStatsPaper.innerText = "paper: " + game.stats.player.choices.paper + " (" + playerChoicePercentageOfPaper.toFixed(1) + "%)";;
-  playerStatsScissors.innerText =
-    "scissors: " + game.stats.player.choices.scissors + " (" + playerChoicePercentageOfScissors.toFixed(1) + "%)";;
+export function collectsComputerStats() {
+  if (computer.choice.type === "rock") {
+    game.stats.computer.choices.rock++;
+  } else if (computer.choice.type === "paper") {
+    game.stats.computer.choices.paper++;
+  } else if (computer.choice.type === "scissors") {
+    game.stats.computer.choices.scissors++;
+  }
 }
 
-export function statsPrototypeForComputer() {
-  let computerTotalGames = game.stats.computer.wins + game.stats.computer.losses;
+export function updatesGameStats() {
+  handlesPieChart(
+    game.stats.player,
+    playerPieChartData1,
+    "rgb(31, 125, 0)",
+    "rgb(235, 59, 50)",
+    playerPieChartData2,
+    "orange",
+    "pink",
+    "lightblue",
+    playerStatsWins,
+    playerStatsLosses,
+    playerStatsRock,
+    playerStatsPaper,
+    playerStatsScissors
+  );
+  handlesPieChart(
+    game.stats.computer,
+    computerPieChartData1,
+    "rgb(31, 125, 0)",
+    "rgb(235, 59, 50)",
+    computerPieChartData2,
+    "orange",
+    "pink",
+    "lightblue",
+    computerStatsWins,
+    computerStatsLosses,
+    computerStatsRock,
+    computerStatsPaper,
+    computerStatsScissors
+  );
+  }
 
-  let computerPercentageOfWins =
-    (game.stats.computer.wins / computerTotalGames) * 100;
-  let computerPercentageOfLosses =
-    (game.stats.computer.losses / computerTotalGames) * 100;
+export function handlesPieChart(
+  these,
+  chart1,
+  winsColor,
+  lossesColor,
+  chart2,
+  rockColor,
+  paperColor,
+  scissorsColor,
+  data1,
+  data2,
+  data3,
+  data4,
+  data5
+) {
+  let totalGames = these.wins + these.losses;
 
-  //3.6 degrees per 1 %
+  let winRatio = (these.wins / totalGames) * 100;
+  let lossRatio = (these.losses / totalGames) * 100;
 
-  let computerWinRatio = computerPercentageOfWins;
-
-  computerPieChartData1.style.backgroundImage =
+  chart1.style.backgroundImage =
     "conic-gradient(" +
-    "rgb(31, 125, 233) 0" +
-    computerWinRatio.toString() +
+    winsColor + " 0" +
+    winRatio.toString() +
     "%," +
-    "rgb(235, 59, 50) 0 100%)";
+    lossesColor + "0 100%)";
 
-  let computerTotalChoices =
-    game.stats.computer.choices.rock +
-    game.stats.computer.choices.paper +
-    game.stats.computer.choices.scissors;
+  let totalChoices =
+    these.choices.rock + these.choices.paper + these.choices.scissors;
 
-let computerChoicePercentageOfRock =
-    (game.stats.computer.choices.rock / computerTotalChoices) * 100;
-  let computerChoicePercentageOfPaper =
-    (game.stats.computer.choices.paper / computerTotalChoices) * 100;
-  let computerChoicePercentageOfScissors =
-    (game.stats.computer.choices.scissors / computerTotalChoices) * 100;
+  let rockRatio = (these.choices.rock / totalChoices) * 100;
+  let paperRatio = (these.choices.paper / totalChoices) * 100;
+  let scissorsRatio = (these.choices.scissors / totalChoices) * 100;
 
-  let computerPaperRatio = computerChoicePercentageOfPaper;
-  let computerScissorsRatio = computerChoicePercentageOfScissors + computerPaperRatio;
-  computerPieChartData2.style.backgroundImage =
+  scissorsRatio += paperRatio;
+
+  chart2.style.backgroundImage =
     "conic-gradient(" +
-    "pink 0 " +
-    computerPaperRatio.toString() +
+    paperColor + " 0" +
+    paperRatio.toString() +
     "%," +
-    "lightblue 0 " +
-    computerScissorsRatio.toString() +
+    scissorsColor + " 0" +
+    scissorsRatio.toString() +
     "%," +
-    "orange 0";
+    rockColor + " 0";
 
-
-  computerStatsWins.innerText = "wins: " + game.stats.computer.wins + " (" + computerPercentageOfWins.toFixed(1) + "%)";
-  computerStatsLosses.innerText = "losses: " + game.stats.computer.losses + " (" + computerPercentageOfLosses.toFixed(1) + "%)";
-  computerStatsRock.innerText = "rock: " + game.stats.computer.choices.rock + " (" + computerChoicePercentageOfRock.toFixed(1) + "%)";
-  computerStatsPaper.innerText = "paper: " + game.stats.computer.choices.paper + " (" + computerChoicePercentageOfPaper.toFixed(1) + "%)";;
-  computerStatsScissors.innerText =
-    "scissors: " + game.stats.computer.choices.scissors + " (" + computerChoicePercentageOfScissors.toFixed(1) + "%)";;
+  data1.innerText = "wins: " + these.wins + " (" + winRatio.toFixed(1) + "%)";
+  data2.innerText =
+    "losses: " + these.losses + " (" + lossRatio.toFixed(1) + "%)";
+  data3.innerText =
+    "rock: " + these.choices.rock + " (" + rockRatio.toFixed(1) + "%)";
+  data4.innerText =
+    "paper: " + these.choices.paper + " (" + paperRatio.toFixed(1) + "%)";
+  data5.innerText =
+    "scissors: " +
+    these.choices.scissors +
+    " (" +
+    scissorsRatio.toFixed(1) +
+    "%)";
 }
