@@ -8,11 +8,13 @@
   <title>Document</title>
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/c06fb9eab3.js" crossorigin="anonymous"></script>
 
 <body>
   <header>
     <div id="logo-container">
-      <h1 class="logo">RPS</h1>
+      <div class="logo" class="logo"> <img src="resources/img/placeholderLogo.png" width="50px" alt="placeholder logo">
+      </div>
     </div>
     <div id="menu-container">
       <h2 id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
@@ -234,14 +236,26 @@
   </main>
 
   <footer>
-    <div id="links-box">
+    <div class="bracket">
+      <div id="top-left-bracket"></div>
+    </div>
+    <div class="line-rows">
       <a href="https://www.linkedin.com/in/johan-möller-a92b90149" target="_blank">
-        LinkedIn
+        <i class="fa-brands fa-linkedin-in"></i>
       </a>
       <a href="https://github.com/jfMoller" target="_blank">
-        GitHub
+        <i class="fa-brands fa-github"></i>
       </a>
     </div>
+    <div class="stack-rows">
+      <p id="footer-text">johan möller © 2023</p>
+    </div>
+    <div class="bracket">
+    <div id="bottom-right-bracket" class="bracket"></div>
+  </div>
+
+
+
   </footer>
 
   <script type="module" src="main.js"></script>

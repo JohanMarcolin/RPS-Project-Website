@@ -1,9 +1,11 @@
 
-@import "CSS/main.css";
+@import "CSS/all-pages/main.css";
+@import "CSS/all-pages/site-menu.css";
+@import "CSS/all-pages/site-footer.css";
 
 @import "CSS/home-page/main.css";
 
-@import "CSS/game-page/site-menu.css";
+
 @import "CSS/game-page/game-for-desktop.css";
 @import "CSS/game-page/game-for-phone-or-tablet.css";
 @import "CSS/game-page/game-animations.css";
@@ -16,6 +18,6 @@
 
 
 
-@import "CSS/game-page/site-footer.css";
+
 
 

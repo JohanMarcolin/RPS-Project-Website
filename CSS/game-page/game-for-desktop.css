@@ -1,13 +1,6 @@
 #game-container {
   display: none;
-  background-image: radial-gradient(
-    circle,
-    #2d3236,
-    #262a2d,
-    #1f2224,
-    #181b1c,
-    #111314
-  );
+  height: 700px;
 }
 
 #main-menu-container {
@@ -62,7 +55,6 @@ button:hover {
 }
 
 #game-running-container {
-  
   display: none;
   grid-template-columns: 1fr 25rem 1fr;
   grid-template-rows: 1fr 25rem 1fr;
@@ -179,4 +171,3 @@ button:hover {
   align-items: center;
   justify-content: flex-start;
 }
-

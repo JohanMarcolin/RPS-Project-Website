@@ -1,6 +1,6 @@
 #stats-container {
     display: none;
-    background-color: lightslategray;
+    height: 700px;
         grid-template-columns: 1fr;
         grid-template-rows: 50px 1fr 50px 1fr;
         grid-template-areas:
@@ -10,8 +10,9 @@
         "computer-stats";
   }
 
-  #stats-container h2, h3 {
+  #stats-container h2, h3, h4 {
     text-align: center;
+    color: whitesmoke;
   }
   .stats-box {
     display: flex;

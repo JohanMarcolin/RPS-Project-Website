@@ -1,9 +1,13 @@
 #rules-container {
   display: none;
-  background-color: lightslategray;
+  height: 700px;
 }
 #rules-container h2 {
   text-align: center;
+}
+
+#rules-container h2, #rules-container h3 {
+  color:whitesmoke;
 }
 
 #rules-img-box img {
