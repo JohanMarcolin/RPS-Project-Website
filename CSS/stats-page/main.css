@@ -50,28 +50,28 @@ span {
 }
 
 .wins {
-  background-color: rgb(31, 125, 233);
+  background-color: #FF6361;
   width: 10px;
   height: 10px;
 }
 .losses {
-  background-color: rgb(235, 59, 50);
+  background-color: #FFA600;
   width: 10px;
   height: 10px;
 }
 
 .rock {
-  background-color: orange;
+  background-color: #003F5C;
   width: 10px;
   height: 10px;
 }
 .paper {
-  background-color: pink;
+  background-color: #BC5090;
   width: 10px;
   height: 10px;
 }
 .scissors {
-  background-color: lightblue;
+  background-color: #58508D;
    width: 10px;
   height: 10px;
 }
@@ -100,17 +100,17 @@ span {
   #player-stats-wins-and-losses {
     grid-area: pie-chart1;
     background-image: conic-gradient(
-      rgb(31, 125, 233) 0 180deg, 
-      rgb(235, 59, 50) 0 180deg);
+      #FFA600 0 50%, 
+      #FF6361 0 50%);
   }
 
   
   #player-stats-choices {
     grid-area: pie-chart2;
     background-image: conic-gradient(
-      pink 0 33%, 
-      lightblue 0 66%, 
-      orange 0);
+      #BC5090 0 33%, 
+      #58508D 0 66%, 
+      #003F5C 0);
   }
  
 
@@ -138,15 +138,15 @@ span {
   #computer-stats-wins-and-losses {
     grid-area: pie-chart1;
     background-image: conic-gradient(
-      rgb(31, 125, 233) 0 180deg, 
-      rgb(235, 59, 50) 0 180deg);
+      #FFA600 0 50%, 
+      #FF6361 0 50%);
   }
 
   
   #computer-stats-choices {
     grid-area: pie-chart2;
     background-image: conic-gradient(
-      pink 0 33%, 
-      lightblue 0 66%, 
-      orange 0);
+      #BC5090 0 33%, 
+      #58508D 0 66%, 
+      #003F5C 0);
   }

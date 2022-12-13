@@ -31,12 +31,12 @@ export function updatesGameStats() {
   handlesPieChart(
     game.stats.player,
     playerPieChartData1,
-    "rgb(31, 125, 0)",
-    "rgb(235, 59, 50)",
+    "#FF6361",
+    "#FFA600",
     playerPieChartData2,
-    "orange",
-    "pink",
-    "lightblue",
+    "#003F5C",
+    "#BC5090",
+    "#58508D",
     playerStatsWins,
     playerStatsLosses,
     playerStatsRock,
@@ -46,19 +46,19 @@ export function updatesGameStats() {
   handlesPieChart(
     game.stats.computer,
     computerPieChartData1,
-    "rgb(31, 125, 0)",
-    "rgb(235, 59, 50)",
+    "#FF6361",
+    "#FFA600",
     computerPieChartData2,
-    "orange",
-    "pink",
-    "lightblue",
+    "#003F5C",
+    "#BC5090",
+    "#58508D",
     computerStatsWins,
     computerStatsLosses,
     computerStatsRock,
     computerStatsPaper,
     computerStatsScissors
   );
-  }
+}
 
 export function handlesPieChart(
   these,
@@ -82,10 +82,12 @@ export function handlesPieChart(
 
   chart1.style.backgroundImage =
     "conic-gradient(" +
-    winsColor + " 0" +
+    winsColor +
+    " 0 " +
     winRatio.toString() +
     "%," +
-    lossesColor + "0 100%)";
+    lossesColor +
+    " 0 100%)";
 
   let totalChoices =
     these.choices.rock + these.choices.paper + these.choices.scissors;
@@ -96,15 +98,23 @@ export function handlesPieChart(
 
   scissorsRatio += paperRatio;
 
+  if (these.wins === 0 && these.losses === 0) {
+    winRatio = 0;
+    lossRatio = 0;
+  }
+
   chart2.style.backgroundImage =
     "conic-gradient(" +
-    paperColor + " 0" +
+    paperColor +
+    " 0 " +
     paperRatio.toString() +
     "%," +
-    scissorsColor + " 0" +
+    scissorsColor +
+    " 0 " +
     scissorsRatio.toString() +
     "%," +
-    rockColor + " 0";
+    rockColor +
+    " 0";
 
   data1.innerText = "wins: " + these.wins + " (" + winRatio.toFixed(1) + "%)";
   data2.innerText =
