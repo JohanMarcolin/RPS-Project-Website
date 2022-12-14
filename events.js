@@ -6,8 +6,7 @@ import {
   startButton,
   gameRunning,
   roundResult,
-  splitRoundResultPlayer,
-  splitRoundResultComputer,
+  compactRoundResult,
   rockElement,
   paperElement,
   scissorsElement,
@@ -87,9 +86,8 @@ export function handleClick(event) {
     computer.score = 0;
     gameOver.style.display = "none";
     container.style.display = "grid";
-    roundResult.innerText = "Result";
-    splitRoundResultPlayer.innerText = " ";
-    splitRoundResultComputer.innerText = " ";
+    roundResult.innerText = " ";
+    compactRoundResult.innerText = " ";
   }
 }
 

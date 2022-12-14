@@ -32,8 +32,7 @@ function determinesIfSubjectWinsTheRound(subject, opponent) {
   if (subject.choice.type === "rock" && opponent.choice.type === "scissors") {
     showsResultsForAllScreenWidths(
       subject.name + " wins the round!",
-      subject.name + " wins the round!",
-      " "
+      subject.name + " wins the round!"
     );
     subject.score++;
   }
@@ -41,8 +40,7 @@ function determinesIfSubjectWinsTheRound(subject, opponent) {
   if (subject.choice.type === "paper" && opponent.choice.type === "rock") {
     showsResultsForAllScreenWidths(
       subject.name + " wins the round!",
-      subject.name + " wins the round!",
-      " "
+      subject.name + " wins the round!"
     );
     subject.score++;
   }
@@ -50,8 +48,7 @@ function determinesIfSubjectWinsTheRound(subject, opponent) {
   if (subject.choice.type === "scissors" && opponent.choice.type === "paper") {
     showsResultsForAllScreenWidths(
       subject.name + " wins the round!",
-      subject.name + " wins the round!",
-      " "
+      subject.name + " wins the round!"
     );
     subject.score++;
   }

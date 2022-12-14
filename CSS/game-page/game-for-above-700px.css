@@ -13,23 +13,8 @@
     "start-button";
 }
 
-.game-colors {
+.game-text {
   color: #ffffff;
-}
-
-button {
-  display: inline-block;
-  padding: 0.3rem;
-  margin: 0.2rem;
-  border: 0.15rem solid #cccccc;
-  font-weight: 400;
-  width: 7rem;
-  color: #000000;
-  background-color: #cccccc;
-  text-align: center;
-}
-button:hover {
-  border-color: #7a7a7a;
 }
 
 #title-box {
@@ -39,6 +24,7 @@ button:hover {
   align-items: center;
   justify-content: flex-end;
 }
+
 #settings-box {
   grid-area: settings;
   display: flex;
@@ -52,6 +38,28 @@ button:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+.game-button {
+  display: inline-block;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 0.15rem solid #cccccc;
+  font-weight: 400;
+  width: 7rem;
+  color: #000000;
+  background-color: #cccccc;
+  text-align: center;
+}
+
+.game-button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #666666;
+}
+.game-button:hover {
+  border-color: #7a7a7a;
 }
 
 #game-running-container {
@@ -84,11 +92,6 @@ button:hover {
   justify-content: center;
 }
 
-#player-name-display {
-  margin: 0;
-  margin-bottom: 1rem;
-}
-
 #player-choice-elements-box {
   display: flex;
   flex-direction: column;
@@ -102,6 +105,11 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
+#compact-round-result {
+  display: none;
+}
+
 #computer-choice-box {
   grid-area: choice2;
   display: flex;
@@ -112,10 +120,11 @@ button:hover {
 
 #player-choice-box img,
 #computer-choice-box img {
-  width: 3rem;
+  width: 50px;
 }
 
-#computer-name-display {
+#computer-name-display,
+#player-name-display {
   margin: 0;
   margin-bottom: 1rem;
 }
@@ -132,14 +141,6 @@ button:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-}
-
-#split-result-player {
-  display: none;
-}
-
-#split-result-computer {
-  display: none;
 }
 
 #game-over-container {

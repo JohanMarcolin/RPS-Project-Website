@@ -4,19 +4,37 @@
     width: 100%;
     display: none;
     grid-template-columns: 1fr 15rem 1fr;
-    grid-template-rows: 1fr 20rem 1fr;
+    grid-template-rows: 10rem 20rem 10rem;
     grid-template-areas:
       "player-choice player-choice player-choice"
       "player-score alt-comparison computer-score"
       "computer-choice computer-choice computer-choice";
   }
 
-  #result-box {
+  #compared-score-display {
     display: none;
   }
 
-  #compared-score-display {
-    display: none;
+  #player-score-box {
+    grid-area: player-score;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #player-score-display {
+    display: flex;
+  }
+
+  #computer-score-box {
+    grid-area: computer-score;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #computer-score-display {
+    display: flex;
   }
 
   #player-choice-box {
@@ -28,13 +46,7 @@
       "player-name"
       "player-choices";
   }
-  #player-name-display {
-    grid-area: player-name;
-    display: flex;
-    align-self: flex-end;
-    justify-self: center;
-    margin: 1rem;
-  }
+
   #player-choice-elements-box {
     grid-area: player-choices;
     display: flex;
@@ -43,17 +55,38 @@
     justify-content: center;
   }
 
+  #player-name-display {
+    grid-area: player-name;
+    display: flex;
+    align-self: flex-end;
+    justify-self: center;
+  }
+
+  #comparison-box {
+    grid-area: alt-comparison;
+    min-width: 33.333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #compact-round-result {
+    display: flex;
+    margin-top: 0;
+    padding-bottom: 7rem;
+  }
+
   #computer-choice-box {
     grid-area: computer-choice;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr;
     grid-template-areas:
       ". computer-choices ."
-      ". computer-name ."
-      ". . .";
+      ". computer-name .";
   }
-  /* revise symmetry! */
+
   #computer-name-display {
     grid-area: computer-name;
     display: flex;
@@ -72,41 +105,7 @@
     justify-content: center;
   }
 
-  #player-score-box {
-    grid-area: player-score;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #player-score-display {
-    display: flex;
-  }
-
-  #comparison-box {
-    grid-area: alt-comparison;
-    min-width: 33.333%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #split-result-player {
-    display: flex;
-  }
-
-  #split-result-computer {
-    display: flex;
-  }
-  #computer-score-box {
-    grid-area: computer-score;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #computer-score-display {
-    display: flex;
+  #result-box {
+    display: none;
   }
 }

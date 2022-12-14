@@ -11,19 +11,21 @@
   <script src="https://kit.fontawesome.com/c06fb9eab3.js" crossorigin="anonymous"></script>
 
 <body>
+
   <header>
     <div id="logo-container">
-      <div class="logo" class="logo"> <img src="resources/img/placeholderLogo.png" width="50px" alt="placeholder logo">
+      <div class="logo"> <img src="resources/img/placeholderLogo.png" width="50px"
+          alt="small yellow logo depicting data components">
       </div>
     </div>
     <div id="menu-container">
-      <h2 id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+      <div id="menu-button-box"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
           fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
           class="feather feather-menu">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg> </h2>
+        </svg> </div>
     </div>
     <div id="nav-container">
       <nav>
@@ -51,7 +53,7 @@
     </section>
 
     <article id="game-container">
-      <div class="game-colors" id="main-menu-container">
+      <div id="main-menu-container" class="game-text">
         <div id="title-box">
           <h2>Rock Paper Scissors</h2>
           <div id="interactive-logo">
@@ -59,18 +61,18 @@
           </div>
         </div>
         <div id="settings-box">
-          <h3>Settings</h3>
           <h3>Player name: <br><input type="text" id="player-name"></h3>
-          <h3>Best of: <br> 3 <input type="checkbox" id="check-3"> 5 <input type="checkbox" id="check-5"> </h3>
+          <h3>Best of: <br> 3 <input type="checkbox" id="check-3">
+            5 <input type="checkbox" id="check-5"> </h3>
         </div>
         <div id="start-button-box">
-          <button id="start-button">Start Game</button>
+          <button id="start-button" class="game-button">Start Game</button>
         </div>
       </div>
 
-      <div class="game-colors" id="game-running-container">
+      <div id="game-running-container" class="game-colors">
         <div id="compared-score-box">
-          <h3 id="compared-score-display">Player Score : Computer Score</h3>
+          <h3 id="compared-score-display">player.score from js : computer.score from js</h3>
         </div>
         <div id="player-score-box">
           <h4 id="player-score-display">player.score from js</h4>
@@ -79,51 +81,33 @@
           <h4 id="computer-score-display">computer.score from js</h4>
         </div>
         <div id="player-choice-box">
-
-          <h4 id="player-name-display">Player</h4>
-
-
+          <h4 id="player-name-display">player.name from js</h4>
           <div id="player-choice-elements-box">
             <img src="resources/img/rock.png" id="player-choice-rock" alt="">
-
             <img src="resources/img/paper.png" id="player-choice-paper" alt="">
-
-
             <img src="resources/img/scissors.png" id="player-choice-scissors" alt="">
           </div>
         </div>
         <div id="comparison-box">
           <div id="player-result">
-            <h4 id="split-result-player">Result</h4>
+            <h4 id="compact-round-result"></h4>
           </div>
-          <h3>Comparison</h3>
-          <div id="computer-result">
-            <h4 id="split-result-computer">Result</h4>
-          </div>
+
         </div>
         <div id="computer-choice-box">
-
           <h4 id="computer-name-display">Computer</h4>
-
-
           <div id="computer-choice-elements-box">
             <img src="resources/img/rock.png" id="computer-choice-rock" alt="">
-
-
             <img src="resources/img/paper.png" id="computer-choice-paper" alt="">
-
-
             <img src="resources/img/scissors.png" id="computer-choice-scissors" alt="">
           </div>
         </div>
-
         <div id="result-box">
-          <h3 id="round-result-display">Result</h3>
+          <h3 id="round-result-display"></h3>
         </div>
-
-
       </div>
-      <div class="game-colors" id="game-over-container">
+
+      <div id="game-over-container" class="game-colors">
         <div id="final-score-box">
           <h3 id="final-compared-score-display">Player Score : Computer Score</h3>
         </div>
@@ -134,9 +118,9 @@
           <button id="rematch-button">Rematch</button>
           <button id="return-to-main-menu-button">Main Menu</button>
         </div>
+      </div>
+      </div>
 
-      </div>
-      </div>
     </article>
     <section id="rules-container">
       <div id="rules-img-box">
@@ -236,10 +220,7 @@
   </main>
 
   <footer>
-    <div class="bracket">
-      <div id="top-left-bracket"></div>
-    </div>
-    <div class="line-rows">
+    <div>
       <a href="https://www.linkedin.com/in/johan-möller-a92b90149" target="_blank">
         <i class="fa-brands fa-linkedin-in"></i>
       </a>
@@ -247,12 +228,9 @@
         <i class="fa-brands fa-github"></i>
       </a>
     </div>
-    <div class="stack-rows">
+    <div>
       <p id="footer-text">johan möller © 2023</p>
     </div>
-    <div class="bracket">
-    <div id="bottom-right-bracket" class="bracket"></div>
-  </div>
 
 
 

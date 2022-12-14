@@ -26,11 +26,8 @@
   export let roundResult = document.querySelector("#round-result-display");
 
   //ELEMENTS FOR DIFFERENT LAYOUT IN PORTRAIT VIEW
-    export let splitRoundResultPlayer = document.querySelector(
-      "#split-result-player"
-    );
-    export let splitRoundResultComputer = document.querySelector(
-      "#split-result-computer"
+    export let compactRoundResult = document.querySelector(
+      "#compact-round-result"
     );
   
 //PLAYER CHOICE

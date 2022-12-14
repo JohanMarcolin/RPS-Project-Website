@@ -1,15 +1,15 @@
 
 @import "CSS/all-pages/main.css";
+@import "CSS/all-pages/main-for-below-400px.css";
 @import "CSS/all-pages/site-menu.css";
 @import "CSS/all-pages/site-footer.css";
 
 @import "CSS/home-page/main.css";
 
 
-@import "CSS/game-page/game-for-desktop.css";
-@import "CSS/game-page/game-for-phone-or-tablet.css";
+@import "CSS/game-page/game-for-above-700px.css";
+@import "CSS/game-page/game-for-below-700px.css";
 @import "CSS/game-page/game-animations.css";
-@import "CSS/game-page/phone-layout.css";
 
 @import "CSS/rules-page/main.css";
 

@@ -1,14 +1,19 @@
-#menu-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 #logo-container {
   display: flex;
   width: max-content;
   justify-content: flex-start;
   align-items: center;
+}
+
+#menu-container {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+#menu-button-box {
+  display: none;
 }
 
 .logo {
@@ -22,9 +27,9 @@
 
 #nav-container {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(30, 33, 39);
 }
 
 nav {
@@ -35,22 +40,12 @@ nav {
 nav a {
   padding: 1rem 2rem 1rem 2rem;
   text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
+  color: whitesmoke;
+  font-size: 1.1rem;
 }
 
 nav a:hover {
   background-color: rgb(44, 48, 56);
-  color: white;
-}
-
-#menu-container {
-  display: none;
-  padding-right: 2rem;
-}
-#menu-button-box {
-  display: none;
-  margin: 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -67,10 +62,22 @@ nav a:hover {
     grid-area: logo;
   }
 
+  #menu-container {
+    grid-area: button;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #menu-button-box {
+    display: flex;
+  }
+
   #nav-container {
     grid-area: nav;
+    background-color: rgb(30, 33, 39);
     position: absolute;
-    top: 64px;
+    top: 70px;
     z-index: 1;
     width: 100%;
     display: none;
@@ -81,20 +88,5 @@ nav a:hover {
   nav {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
-  #menu-container {
-    grid-area: button;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  #menu-button-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
   }
 }

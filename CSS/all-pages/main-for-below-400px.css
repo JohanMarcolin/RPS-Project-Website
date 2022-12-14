@@ -1,0 +1,45 @@
+@media screen and (max-width: 400px) {
+  html,
+  body {
+    overflow-y: hidden;
+  }
+
+  body {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  #home-container {
+    display: none;
+  }
+  #game-container {
+    display: none;
+  }
+  #rules-container {
+    display: none;
+  }
+  #stats-container {
+    display: none;
+  }
+}
