@@ -38,6 +38,9 @@ main {
     #181b1c,
     #111314
   );
+  display:flex;
+
+  flex: 1;
 }
 
 main > * {

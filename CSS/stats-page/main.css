@@ -1,8 +1,9 @@
 #stats-container {
   display: none;
+  align-self: center;
   height: 700px;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 50px 1fr;
+  grid-template-rows: max-content max-content max-content max-content;
   grid-template-areas:
     "player-title"
     "player-stats"
@@ -10,12 +11,17 @@
     "computer-stats";
 }
 
+#stats-container h2 {
+  text-transform: uppercase;
+}
 #stats-container h2,
 #stats-container h3 {
   text-align: center;
 }
+
 #stats-container h4 {
   text-align: left;
+  font-weight: 400;
 }
 
 #stats-container span {
@@ -60,7 +66,8 @@
 }
 
 .data-box {
-  margin-top: 1rem;
+  margin: auto;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 10px 150px;
   grid-template-rows: 20px 1fr 1fr;
@@ -141,4 +148,52 @@
 #computer-stats-choices {
   grid-area: pie-chart2;
   background-image: conic-gradient(#bc5090 0 33%, #58508d 0 66%, #003f5c 0);
+}
+
+@media screen and (max-width: 400px) {
+
+  #stats-container {
+    display: none;
+   margin: auto;
+  }
+  
+  #stats-container h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0;
+    margin-top: 10px;
+  }
+  #stats-container h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0;
+    
+  }
+  #stats-container h4 {
+    text-align: left;
+    font-size: 13px;
+  }
+
+  #player-stats-box {
+    gap: 0rem 1.5rem;
+  }
+
+  .data-box {
+
+    display: grid;
+    grid-template-columns: 10px 150px;
+    grid-template-rows: 20px 1fr 1fr;
+    align-self: center;
+  }
+  
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  #computer-stats-box {
+    gap: 0rem 1.5rem;
+  }
+
 }

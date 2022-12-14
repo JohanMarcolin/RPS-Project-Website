@@ -8,11 +8,10 @@
     position: relative;
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-rows: 10vh 90vh;
     grid-template-areas:
       "header"
-      "main"
-      "footer";
+      "main";
   }
 
   header {
@@ -28,5 +27,6 @@
 
   footer {
     grid-area: footer;
+    display: none;
   }
 }

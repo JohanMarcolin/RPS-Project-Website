@@ -1,5 +1,7 @@
 #home-container {
   display: none;
+  height: 700px;
+  background-color: #000000;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "header-box";

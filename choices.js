@@ -69,6 +69,7 @@ function determinesIfSubjectWinsTheGame(subject, opponent) {
   ) {
     showsFinalScoresAndResults(subject.name + " wins the game!");
     switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
+    //known bug, attribute points correctly!
     game.stats.player.wins++;
     game.stats.computer.losses++;
   }
