@@ -57,3 +57,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+h1, h2, h3, h4, p {
+  color: white;
+}

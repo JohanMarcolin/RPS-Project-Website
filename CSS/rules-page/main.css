@@ -2,34 +2,27 @@
   display: none;
   height: 700px;
 }
-#rules-container h2 {
+.rules-text {
+  color: whitesmoke;
   text-align: center;
-}
-
-#rules-container h2, #rules-container h3 {
-  color:whitesmoke;
-}
-
-#rules-img-box img {
-  width: 50px;
-  padding: 2rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "row1"
-    "row2"
-    "row3"
-    "row4";
-}
-#rules-img-box h3 {
-  align-self: center;
-  padding: 1rem;
 }
 
 .rules-row {
   display: flex;
-  text-align: center;
-  justify-content: center;
+}
+
+#rules-img-box {
+  padding: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#rules-img-box img {
+  height: 100%;
+  width: 50px;
+}
+#rules-img-box h3 {
+  padding: 1rem 4rem 1rem 4rem;
 }
 
 .alternating-imgs {
@@ -58,17 +51,4 @@
     opacity: 1;
     background-image: url("../../resources/img/scissors.png");
   }
-}
-
-#rules-row1 {
-  grid-area: row-1;
-}
-#rules-row2 {
-  grid-area: row-2;
-}
-#rules-row3 {
-  grid-area: row-3;
-}
-#rules-row4 {
-  grid-area: row-4;
 }

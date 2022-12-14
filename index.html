@@ -39,16 +39,16 @@
 
   <main>
     <section id="home-container">
-      <div id="header-box">
-        <img id="header-img" src="resources/img/mountain_bw.png" alt="sky">
-        <div id="header-img-text-box">
-          <h2 id="header-img-text-title">ROCK <br> PAPER <br> SCISSORS</h2>
-          <p id="header-img-text">
+      <div id="scene-box">
+        <img id="scene-img" src="resources/img/mountain_bw.png" alt="sky">
+        <div id="scene-img-text-box">
+          <h2 id="scene-img-text-title">ROCK <br> PAPER <br> SCISSORS</h2>
+          <p id="scene-img-text">
             A responsive website as part of an ongoing frontend course. The goal was to make a responsive website with a
             functional rock paper scissors game.
           </p>
         </div>
-        <div id="img2"></div>
+        <div id="scene-extension-img"></div>
       </div>
     </section>
 
@@ -124,90 +124,65 @@
     </article>
     <section id="rules-container">
       <div id="rules-img-box">
-        <h2>Game Rules</h2>
-        <div id="rules-row1" class="rules-row">
+        <h2 class="rules-text">Game Rules</h2>
+        <div class="rules-row">
           <img src="resources/img/rock.png" alt="">
           <h3>beats </h3> <img src="resources/img/scissors.png" alt="">
         </div>
-        <div id="rules-row2" class="rules-row">
-
+        <div class="rules-row">
           <img src="resources/img/paper.png" alt="">
           <h3>beats </h3> <img src="resources/img/rock.png" alt="">
         </div>
-
-        <div id="rules-row3" class="rules-row">
+        <div class="rules-row">
           <img src="resources/img/scissors.png" alt="">
           <h3>beats </h3> <img src="resources/img/paper.png" alt="">
         </div>
-
-        <div id="rules-row4" class="rules-row">
-          <div class="alternating-imgs"></div>
-          <h3>draws </h3>
+        <div class="rules-row">
+          <div class="alternating-imgs" class="rules-row"></div>
+          <h3>draws</h3>
           <div class="alternating-imgs"></div>
         </div>
       </div>
       </div>
-
-
-
-
     </section>
-    <section id="stats-container">
 
+    <section id="stats-container">
       <h2 id="player-title" class="stats-box">Player</h2>
-      <div class="stats-box" id="player-stats-box">
+      <div id="player-stats-box" class="stats-box" >
         <h3 id="player-chart-title1">wins/losses</h3>
         <div id="player-data-piechart1" class="data-box">
-
           <span class="wins"></span>
           <h4 id="player-stats-wins"> wins:</h4>
-
-
           <span class="losses"></span>
           <h4 id="player-stats-losses"> losses:</h4>
-
         </div>
-
-        <div class="pie-chart" id="player-stats-wins-and-losses"></div>
+        <div id="player-stats-wins-and-losses" class="pie-chart"></div>
         <h3 id="player-chart-title2">choices</h3>
-        <div class="pie-chart" id="player-stats-choices"></div>
+        <div id="player-stats-choices" class="pie-chart" ></div>
         <div id="player-data-piechart2" class="data-box">
-
           <span class="rock"></span>
           <h4 id="player-stats-rock"> rock:</h4>
-
-
           <span class="paper"></span>
           <h4 id="player-stats-paper"> paper:</h4>
           <span class="scissors"></span>
           <h4 id="player-stats-scissors"> scissors:</h4>
         </div>
       </div>
-
       <h2 id="computer-title" class="stats-box">Computer</h2>
-      <div class="stats-box" id="computer-stats-box">
+      <div id="computer-stats-box" class="stats-box">
         <h3 id="computer-chart-title1">wins/losses</h3>
         <div id="computer-data-piechart1" class="data-box">
-
           <span class="wins"></span>
           <h4 id="computer-stats-wins"> wins:</h4>
-
-
           <span class="losses"></span>
           <h4 id="computer-stats-losses"> losses:</h4>
-
         </div>
-
-
         <div class="pie-chart" id="computer-stats-wins-and-losses"></div>
         <h3 id="player-chart-title2">choices</h3>
         <div class="pie-chart" id="computer-stats-choices"></div>
         <div id="player-data-piechart2" class="data-box">
-
           <span class="rock"></span>
           <h4 id="computer-stats-rock"> rock:</h4>
-
-
           <span class="paper"></span>
           <h4 id="computer-stats-paper"> paper:</h4>
           <span class="scissors"></span>

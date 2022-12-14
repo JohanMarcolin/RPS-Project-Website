@@ -1,48 +1,72 @@
 #stats-container {
-    display: none;
-    height: 700px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 1fr 50px 1fr;
-        grid-template-areas:
-        "player-title"
-        "player-stats"
-        "computer-title"
-        "computer-stats";
-  }
-
-  #stats-container h2, h3, h4 {
-    text-align: center;
-    color: whitesmoke;
-  }
-  .stats-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pie-chart {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+  display: none;
+  height: 700px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px 1fr;
+  grid-template-areas:
+    "player-title"
+    "player-stats"
+    "computer-title"
+    "computer-stats";
 }
 
-
-.data-box {
-  margin-top: 1rem;
-display: grid;
-grid-template-columns: 10px 150px;
-grid-template-rows: 20px 1fr 1fr;
-align-self: center;
+#stats-container h2,
+#stats-container h3 {
+  text-align: center;
+}
+#stats-container h4 {
+  text-align: left;
 }
 
-span {
+#stats-container span {
   align-self: center;
 }
 
-.wins-data {
+#player-title {
+  grid-area: player-title;
+}
+
+.stats-box {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
+
+#player-stats-box {
+  grid-area: player-stats;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 50px 150px;
+  gap: 0rem 3rem;
+  grid-template-areas:
+    "chart-title1 chart-title2"
+    "pie-chart1 pie-chart2";
+}
+
+#player-chart-title1 {
+  grid-area: chart-title1;
+}
+
+.wins,
+.losses {
+  width: 10px;
+  height: 10px;
+}
+.wins {
+  background-color: #ff6361;
+}
+.losses {
+  background-color: #ffa600;
+}
+
+.data-box {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 10px 150px;
+  grid-template-rows: 20px 1fr 1fr;
+  align-self: center;
+}
+
 .data-box h4 {
   margin: 0;
   margin-left: 10px;
@@ -50,104 +74,71 @@ span {
   font-weight: 500;
 }
 
-.wins {
-  background-color: #FF6361;
-  width: 10px;
-  height: 10px;
-}
-.losses {
-  background-color: #FFA600;
-  width: 10px;
-  height: 10px;
+#player-stats-wins-and-losses {
+  grid-area: pie-chart1;
+  background-image: conic-gradient(#ffa600 0 50%, #ff6361 0 50%);
 }
 
-.rock {
-  background-color: #003F5C;
+.pie-chart {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+#player-chart-title2 {
+  grid-area: chart-title2;
+}
+
+#player-stats-choices {
+  grid-area: pie-chart2;
+  background-image: conic-gradient(#bc5090 0 33%, #58508d 0 66%, #003f5c 0);
+}
+
+.rock,
+.paper,
+.scissors {
   width: 10px;
   height: 10px;
+}
+.rock {
+  background-color: #003f5c;
 }
 .paper {
-  background-color: #BC5090;
-  width: 10px;
-  height: 10px;
+  background-color: #bc5090;
 }
 .scissors {
-  background-color: #58508D;
-   width: 10px;
-  height: 10px;
+  background-color: #58508d;
 }
 
-  #player-title {
-    grid-area: player-title;
-  }
+#computer-title {
+  grid-area: computer-title;
+}
 
-  #player-stats-box {
-    grid-area: player-stats;
-    display: grid;
-    grid-template-columns: 150px 150px;
-    grid-template-rows: 50px 150px;
-    gap: 0rem 3rem;
-    grid-template-areas: 
+#computer-stats-box {
+  grid-area: computer-stats;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 50px 150px;
+  gap: 0rem 3rem;
+  grid-template-areas:
     "chart-title1 chart-title2"
     "pie-chart1 pie-chart2";
-  }
+}
 
-  #player-chart-title1 {
-    grid-area: chart-title1;
-  }
-  #player-chart-title2 {
-    grid-area: chart-title2;
-  }
-  #player-stats-wins-and-losses {
-    grid-area: pie-chart1;
-    background-image: conic-gradient(
-      #FFA600 0 50%, 
-      #FF6361 0 50%);
-  }
+#computer-chart-title1 {
+  grid-area: chart-title1;
+}
 
-  
-  #player-stats-choices {
-    grid-area: pie-chart2;
-    background-image: conic-gradient(
-      #BC5090 0 33%, 
-      #58508D 0 66%, 
-      #003F5C 0);
-  }
- 
+#computer-stats-wins-and-losses {
+  grid-area: pie-chart1;
+  background-image: conic-gradient(#ffa600 0 50%, #ff6361 0 50%);
+}
 
-  #computer-title {
-    grid-area: computer-title;
-  }
+#computer-chart-title2 {
+  grid-area: chart-title2;
+}
 
-  #computer-stats-box {
-    grid-area: computer-stats;
-    display: grid;
-    grid-template-columns: 150px 150px;
-    grid-template-rows: 50px 150px;
-    gap: 0rem 3rem;
-    grid-template-areas: 
-    "chart-title1 chart-title2"
-    "pie-chart1 pie-chart2";
-  }
-
-  #computer-chart-title1 {
-    grid-area: chart-title1;
-  }
-  #computer-chart-title2 {
-    grid-area: chart-title2;
-  }
-  #computer-stats-wins-and-losses {
-    grid-area: pie-chart1;
-    background-image: conic-gradient(
-      #FFA600 0 50%, 
-      #FF6361 0 50%);
-  }
-
-  
-  #computer-stats-choices {
-    grid-area: pie-chart2;
-    background-image: conic-gradient(
-      #BC5090 0 33%, 
-      #58508D 0 66%, 
-      #003F5C 0);
-  }
+#computer-stats-choices {
+  grid-area: pie-chart2;
+  background-image: conic-gradient(#bc5090 0 33%, #58508d 0 66%, #003f5c 0);
+}

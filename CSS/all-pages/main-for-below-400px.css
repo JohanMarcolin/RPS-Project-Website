@@ -29,17 +29,4 @@
   footer {
     grid-area: footer;
   }
-
-  #home-container {
-    display: none;
-  }
-  #game-container {
-    display: none;
-  }
-  #rules-container {
-    display: none;
-  }
-  #stats-container {
-    display: none;
-  }
 }
