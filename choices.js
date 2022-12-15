@@ -86,7 +86,7 @@ function determinesIfSubjectWinsTheGame(
     subject.score === game.settings.bestOf - 1 &&
     subject.score > opponent.score
   ) {
-    showsFinalScoresAndResults(subject.name + " wins the game!");
+    showsFinalScoresAndResults(subject.name + "\n wins the game!");
     switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
     //known bug, attribute points correctly!
     subjectStats.wins++;

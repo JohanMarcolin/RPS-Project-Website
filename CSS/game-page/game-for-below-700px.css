@@ -4,7 +4,7 @@
     width: 100%;
     display: none;
     grid-template-columns: 1fr 15rem 1fr;
-    grid-template-rows: 10rem 20rem 10rem;
+    grid-template-rows: 12.5rem 15rem 12.5rem;
     grid-template-areas:
       "player-choice player-choice player-choice"
       "player-score alt-comparison computer-score"
@@ -93,7 +93,6 @@
     flex-wrap: wrap;
     align-self: flex-start;
     justify-self: center;
-    margin: 1rem;
   }
 
   #computer-choice-elements-box {

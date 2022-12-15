@@ -1,16 +1,19 @@
 #game-container {
   display: none;
+  align-self: center;
   height: 700px;
 }
 
 #main-menu-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr max-content max-content;
   grid-template-areas:
     "title"
     "settings"
     "start-button";
+  outline: ridge 10px rgba(255, 255, 255, 0.04);
+  border-radius: 50px;
 }
 
 .game-text {
@@ -23,6 +26,7 @@
   align-items: center;
   justify-content: flex-end;
   text-transform: uppercase;
+  margin: 1rem;
 }
 
 #settings-box {
@@ -33,11 +37,26 @@
   justify-content: center;
 }
 
+#settings-box h3 {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#settings-box input {
+  text-align: center;
+}
+
+#player-name {
+  width: 113.22px;
+}
+
 #start-button-box {
   grid-area: start-button;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .game-button {
@@ -76,13 +95,17 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  font-size: 30px;
 }
 
-#player-score-display {
-  display: none;
+#compared-score-box h3 {
+  margin: 1rem;
 }
+
+#player-score-display,
 #computer-score-display {
   display: none;
+  font-size: 30px;
 }
 #player-choice-box {
   grid-area: choice1;
@@ -130,6 +153,7 @@
   margin: auto;
   margin-bottom: 0;
   margin-top: 0;
+  text-transform: capitalize;
 }
 
 #computer-choice-elements-box {
@@ -149,11 +173,14 @@
 #game-over-container {
   display: none;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr max-content max-content;
   grid-template-areas:
     "score"
     "final-result"
     "buttons";
+  outline: ridge 10px rgba(255, 255, 255, 0.04);
+  border-radius: 50px;
+  padding: 2rem;
 }
 
 #final-score-box {
@@ -161,12 +188,20 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 30px;
+  text-align: center;
+}
+
+#final-score-box h3 {
+  margin: 0;
 }
 #final-result-box {
   grid-area: final-result;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
+  text-align: center;
 }
 #end-buttons-box {
   grid-area: buttons;

@@ -24,6 +24,9 @@
 #rules-img-box {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  padding: 1rem;
+  outline: ridge 10px rgba(255, 255, 255, 0.04);
+  border-radius: 50px;
 }
 
 #rules-img-box img {

@@ -1,6 +1,6 @@
 * {
-/*   outline: solid 1px green; */
-}
+/* outline: solid 1px green; */
+ }
 
 html {
   height: 100%;
@@ -13,8 +13,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: rgb(30, 33, 39);
   display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 70px max-content 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr 1fr;
   grid-template-areas:
     "header"
     "main"
@@ -63,4 +63,25 @@ footer {
 
 h1, h2, h3, h4, p {
   color: white;
+}
+
+@media screen and (max-height: 900px) {
+
+  #home-container, #scene-box, #scene-img {
+    height: 600px !important;
+  }
+  #game-container {
+    height: 600px !important;
+  }
+  #rules-container {
+    height: 600px !important;
+  }
+  #stats-container {
+   /*  height: 600px !important; */
+    scale: 0.90 !important;
+    
+  }
+
+
+
 }
