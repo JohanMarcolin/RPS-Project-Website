@@ -13,7 +13,9 @@ export function choicesAreComparedAndWinnerIsDeclared() {
 
   determinesTheWinnerOfEachGameAndUpdatesStatsForWinsAndLosses(
     player,
-    computer
+    game.stats.player,
+    computer,
+    game.stats.computer
   );
 }
 
@@ -56,13 +58,30 @@ function determinesIfSubjectWinsTheRound(subject, opponent) {
 
 function determinesTheWinnerOfEachGameAndUpdatesStatsForWinsAndLosses(
   subject,
-  opponent
+  subjectStats,
+  opponent,
+  opponentStats
 ) {
-  determinesIfSubjectWinsTheGame(subject, opponent);
-  determinesIfSubjectWinsTheGame(opponent, subject);
+  determinesIfSubjectWinsTheGame(
+    subject,
+    subjectStats,
+    opponent,
+    opponentStats
+  );
+  determinesIfSubjectWinsTheGame(
+    opponent,
+    opponentStats,
+    subject,
+    subjectStats
+  );
 }
 
-function determinesIfSubjectWinsTheGame(subject, opponent) {
+function determinesIfSubjectWinsTheGame(
+  subject,
+  subjectStats,
+  opponent,
+  opponentStats
+) {
   if (
     subject.score === game.settings.bestOf - 1 &&
     subject.score > opponent.score
@@ -70,7 +89,7 @@ function determinesIfSubjectWinsTheGame(subject, opponent) {
     showsFinalScoresAndResults(subject.name + " wins the game!");
     switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
     //known bug, attribute points correctly!
-    game.stats.player.wins++;
-    game.stats.computer.losses++;
+    subjectStats.wins++;
+    opponentStats.losses++;
   }
 }

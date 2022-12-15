@@ -104,6 +104,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: ridge 10px rgba(255, 255, 255, 0.04);
+  border-radius: 5000px;
 }
 #compact-round-result {
   display: none;
@@ -120,12 +122,14 @@
 #player-choice-box img,
 #computer-choice-box img {
   width: 50px;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 #computer-name-display,
 #player-name-display {
-  margin: 0;
-  margin-bottom: 1rem;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 #computer-choice-elements-box {

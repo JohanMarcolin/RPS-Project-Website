@@ -15,6 +15,10 @@
 
 .rules-row {
   display: flex;
+  align-items: center;
+}
+.rules-row-animated {
+  display: flex;
 }
 
 #rules-img-box {
@@ -36,24 +40,22 @@
   background-size: 50px;
   width: 100%;
   animation-name: img-loop;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-delay: 0s;
   animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
 
 @keyframes img-loop {
   0% {
-    opacity: 1;
     background-image: url("../../resources/img/rock.png");
   }
 
   50% {
-    opacity: 1;
     background-image: url("../../resources/img/paper.png");
   }
+
   100% {
-    opacity: 1;
     background-image: url("../../resources/img/scissors.png");
   }
 }

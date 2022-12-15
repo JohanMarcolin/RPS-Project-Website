@@ -1,5 +1,7 @@
 //SITE MENU
   export let menuButton = document.querySelector("#menu-button-box");
+  export let barsIcon = document.querySelector("#bars-icon");
+  export let crossIcon = document.querySelector("#cross-icon");
   export let menuContainer = document.querySelector("#nav-container");
   export let homeButton = document.querySelector("#nav-home");
   export let homeContainer = document.querySelector("#home-container");

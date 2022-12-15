@@ -10,7 +10,7 @@
     left: 0rem;
   }
   to {
-    left: 14.08rem;
+    left: 15.08rem;
   }
 }
 
@@ -27,7 +27,7 @@
     right: 0rem;
   }
   to {
-    right: 14.08rem;
+    right: 15.08rem;
   }
 }
 
@@ -44,7 +44,7 @@
       top: 0rem;
     }
     to {
-      top: 11.55rem;
+      top: 12.55rem;
     }
   }
 
@@ -61,7 +61,7 @@
       top: 0rem;
     }
     to {
-      top: -11.55rem;
+      top: -12.55rem;
     }
   }
 }

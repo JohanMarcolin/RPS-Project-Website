@@ -1,5 +1,7 @@
 import {
   menuButton,
+  barsIcon,
+  crossIcon,
   menuContainer,
   homeButton,
   homeContainer,
@@ -22,21 +24,41 @@ const containers = [
 
 export function setsStartPageTo(container) {
   container.style.display = "grid";
-  }
+}
 
 export function setupMenu() {
-  togglesMenuWhenClicked(menuButton, menuContainer);
+  barsIcon.style.display = "flex";
+  togglesMenuWhenIconIsClicked(barsIcon, crossIcon, menuContainer);
   for (let i = 0; i < buttons.length && i < containers.length; ++i) {
     togglesContentWhenClicked(buttons[i], containers[i]);
+    closesMenuWhenClickingOutsideMenuBoundary(buttons[i], barsIcon, crossIcon);
   }
 }
 
-export function togglesMenuWhenClicked(button, container) {
-  button.addEventListener("click", (event) => {
-    if (container.style.display === "") {
-      container.style.display = "flex";
-    } else {
-      container.style.display = "";
+export function togglesMenuWhenIconIsClicked(bars, cross, container) {
+  bars.addEventListener("click", () => {
+    bars.style.display = "";
+    container.style.display = "flex";
+    cross.style.display = "flex";
+  });
+  cross.addEventListener("click", () => {
+    bars.style.display = "flex";
+    container.style.display = "";
+    cross.style.display = "";
+  });
+}
+
+export function closesMenuWhenClickingOutsideMenuBoundary(
+  buttons,
+  bars,
+  cross
+) {
+  window.addEventListener("mouseup", function (event) {
+    if (event.target !== buttons && window.innerWidth <= 700) {
+      //same width as media query for menu change
+      menuContainer.style.display = "";
+      bars.style.display = "flex";
+      cross.style.display = "";
     }
   });
 }
