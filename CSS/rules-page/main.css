@@ -44,22 +44,25 @@
   background-size: 50px;
   width: 100%;
   animation-name: img-loop;
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-delay: 0s;
   animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
 }
 
 @keyframes img-loop {
-  0% {
+  0%,
+  29.9999% {
     background-image: url("../../resources/img/rock.png");
   }
 
-  50% {
+  30%,
+  69.9999% {
     background-image: url("../../resources/img/paper.png");
   }
 
-  100% {
+  70%,
+  99.9999% {
     background-image: url("../../resources/img/scissors.png");
   }
 }

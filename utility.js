@@ -6,7 +6,7 @@ import {
   finalResult,
 } from "./elements.js";
 
-//the amount of time after the choices are made -> that the result is shown
+//the amount of time after the game choices are made -> that the result is shown
 let showResultAfterThisTime = 2000; //ms
 //-||- -> that the result is removed
 let removeResultAfterThisTime = 4000; //ms

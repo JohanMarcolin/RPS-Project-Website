@@ -4,7 +4,7 @@
 #mountain_bw, flipped_bw:
     Photographs taken by my brother of myself whilst vacationing in Åre; flipped_bw altered with https://pixlr.com/
 
-#RPSlaceholder.png:
+#RPS_game_logo.png:
     https://www.flaticon.com/free-icon/rock-paper-scissors_6729598
     <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a>
 
