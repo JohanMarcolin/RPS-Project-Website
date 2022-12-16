@@ -73,7 +73,9 @@
     object-fit: cover;
     width: 100%;
     background-image: url("../../resources/img/flipped_bw.png");
+    background-color: black;
     background-position: 1000px 0px;
+    background-repeat: no-repeat;
     background-size: 1000px;
   }
 }
