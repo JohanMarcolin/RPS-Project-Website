@@ -1,5 +1,4 @@
 import {
-  menuButton,
   barsIcon,
   crossIcon,
   menuContainer,
@@ -27,7 +26,7 @@ export function setsStartPageTo(container) {
 }
 
 export function setupMenu() {
-  barsIcon.style.display = "flex";
+  barsIcon.style.display = "flex"; //icon showing when menu is hidden
   togglesMenuWhenIconIsClicked(barsIcon, crossIcon, menuContainer);
   for (let i = 0; i < buttons.length && i < containers.length; ++i) {
     togglesContentWhenClicked(buttons[i], containers[i]);
@@ -55,7 +54,7 @@ export function closesMenuWhenClickingOutsideMenuBoundary(
 ) {
   window.addEventListener("mouseup", function (event) {
     if (event.target !== buttons && window.innerWidth <= 700) {
-      //same width as media query for menu change
+      //same screen width as media query for menu change in site-menu.css
       menuContainer.style.display = "";
       bars.style.display = "flex";
       cross.style.display = "";

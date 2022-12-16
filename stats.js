@@ -1,3 +1,5 @@
+import { game, computer } from "./game.js";
+
 import {
   playerStatsWins,
   playerStatsLosses,
@@ -15,15 +17,16 @@ import {
   computerPieChartData2,
 } from "./elements.js";
 
-import { game, computer } from "./game.js";
-
 export function collectsComputerStats() {
-  if (computer.choice.type === "rock") {
-    game.stats.computer.choices.rock++;
-  } else if (computer.choice.type === "paper") {
-    game.stats.computer.choices.paper++;
-  } else if (computer.choice.type === "scissors") {
-    game.stats.computer.choices.scissors++;
+  let type = computer.choice.type;
+  let choice = game.stats.computer.choices;
+
+  if (type === "rock") {
+    choice.rock++;
+  } else if (type === "paper") {
+    choice.paper++;
+  } else if (type === "scissors") {
+    choice.scissors++;
   }
 }
 
@@ -31,12 +34,12 @@ export function updatesGameStats() {
   handlesPieChart(
     game.stats.player,
     playerPieChartData1,
-    "#FF6361",
-    "#FFA600",
+    "#FF6361", //for wins
+    "#FFA600", //for losses
     playerPieChartData2,
-    "#003F5C",
-    "#BC5090",
-    "#58508D",
+    "#003F5C", //for rock
+    "#BC5090", //for paper
+    "#58508D", //for scissors
     playerStatsWins,
     playerStatsLosses,
     playerStatsRock,
@@ -46,12 +49,12 @@ export function updatesGameStats() {
   handlesPieChart(
     game.stats.computer,
     computerPieChartData1,
-    "#FF6361",
-    "#FFA600",
+    "#FF6361", //for wins
+    "#FFA600", //for losses
     computerPieChartData2,
-    "#003F5C",
-    "#BC5090",
-    "#58508D",
+    "#003F5C", //for rock
+    "#BC5090", //for paper
+    "#58508D", //for scissors
     computerStatsWins,
     computerStatsLosses,
     computerStatsRock,
@@ -80,23 +83,32 @@ export function handlesPieChart(
   let winRatio = (these.wins / totalGames) * 100;
   let lossRatio = (these.losses / totalGames) * 100;
 
-  chart1.style.backgroundImage =
+  chart1.style.backgroundImage = //only winRatio is needed for the chart
     "conic-gradient(" +
     winsColor +
     " 0 " +
-    winRatio.toString() +
+    winRatio.toString() + //the % of winning
     "%," +
     lossesColor +
-    " 0 100%)";
+    " 0 100%)"; //the remaining % amount illustrates the % of losing
 
   let totalChoices =
     these.choices.rock + these.choices.paper + these.choices.scissors;
 
   let rockRatio = (these.choices.rock / totalChoices) * 100;
+  if (these.choices.rock === 0) {
+    rockRatio = 0;
+  }
   let paperRatio = (these.choices.paper / totalChoices) * 100;
+  if (these.choices.paper === 0) {
+    paperRatio = 0;
+  }
   let scissorsRatio = (these.choices.scissors / totalChoices) * 100;
-
-  scissorsRatio += paperRatio;
+  if (these.choices.scissors === 0) {
+    scissorsRatio = 0;
+  }
+  let scissorsRatioForPiechart = scissorsRatio;
+  scissorsRatioForPiechart += paperRatio; //needed for the correct ratio in the chart
 
   if (these.wins === 0 && these.losses === 0) {
     winRatio = 0;
@@ -111,11 +123,12 @@ export function handlesPieChart(
     "%," +
     scissorsColor +
     " 0 " +
-    scissorsRatio.toString() +
+    scissorsRatioForPiechart.toString() +
     "%," +
     rockColor +
     " 0";
 
+  //toFixed(n); n = the amount of decimal numbers
   data1.innerText = "wins: " + these.wins + " (" + winRatio.toFixed(1) + "%)";
   data2.innerText =
     "losses: " + these.losses + " (" + lossRatio.toFixed(1) + "%)";

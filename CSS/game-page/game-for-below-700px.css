@@ -1,3 +1,4 @@
+/* serves as the primary phone layout when the game is running */
 @media screen and (max-width: 700px) {
   #game-running-container {
     height: 100%;

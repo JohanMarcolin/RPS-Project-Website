@@ -68,6 +68,7 @@ nav a:hover {
   background-color: rgb(44, 48, 56);
 }
 
+/* max-width at which menu has to be toggled manually by clicking top-right icon */
 @media screen and (max-width: 700px) {
   header {
     display: grid;
@@ -111,17 +112,16 @@ nav a:hover {
   }
 }
 
+/* menu dropdown absolute position for iphone */
 @media screen and (max-width: 400px) {
-
   #nav-container {
-    grid-area: nav;
-    background-color: rgb(30, 33, 39);
-    position: absolute;
     top: 67px;
-    z-index: 1;
-    width: 100%;
-    display: none;
-    justify-content: flex-start;
-    align-items: center;
+  }
+}
+
+/* menu dropdown absolute position for samsung */
+@media screen and (max-width: 400px) and (min-height: 700px) {
+  #nav-container {
+    top: 74px;
   }
 }

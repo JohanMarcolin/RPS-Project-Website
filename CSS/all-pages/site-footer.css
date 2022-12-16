@@ -1,7 +1,6 @@
 footer a {
   font-size: 30px;
   text-decoration: none;
-  color: whitesmoke;
 }
 
 #footer-text {
@@ -9,5 +8,4 @@ footer a {
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 0.25rem;
-  color: whitesmoke;
 }

@@ -1,5 +1,6 @@
-//SITE MENU
-  export let menuButton = document.querySelector("#menu-button-box");
+//contains all elements that are used for DOM manipulation
+
+//THE SITE MENU
   export let barsIcon = document.querySelector("#bars-icon");
   export let crossIcon = document.querySelector("#cross-icon");
   export let menuContainer = document.querySelector("#nav-container");
@@ -12,14 +13,14 @@
   export let statsButton = document.querySelector("#nav-stats");
   export let statsContainer = document.querySelector("#stats-container");
 
-//GAME MENU
+//GAME-MENU CONTAINER
   export let mainMenu = document.querySelector("#main-menu-container");
   export let nameInput = document.querySelector("#player-name");
   export let check3 = document.querySelector("#check-3");
   export let check5 = document.querySelector("#check-5");
   export let startButton = document.querySelector("#start-button");
 
-//GAME-RUNNING
+//GAME-RUNNING CONTAINER
   export let gameRunning = document.querySelector("#game-running-container");
   export let comparedScore = document.querySelector("#compared-score-display");
   export let playerScore = document.querySelector("#player-score-display");
@@ -27,7 +28,7 @@
   export let playerName = document.querySelector("#player-name-display");
   export let roundResult = document.querySelector("#round-result-display");
 
-  //ELEMENTS FOR DIFFERENT LAYOUT IN PORTRAIT VIEW
+  //ELEMENTS FOR DIFFERENT LAYOUT WITH A SCREEN WIDTH OF 700PX < AND IN PHONE VIEW
     export let compactRoundResult = document.querySelector(
       "#compact-round-result"
     );

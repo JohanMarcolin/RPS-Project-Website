@@ -1,7 +1,7 @@
 #game-container {
   display: none;
   align-self: center;
-  height: 700px;
+  height: 100%;
 }
 
 #main-menu-container {

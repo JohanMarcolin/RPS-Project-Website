@@ -6,26 +6,39 @@ import {
   computerScissorsElement,
 } from "./elements.js";
 
+//the duration currently set in game-animations.css (equal for all animation classes)
+let animationDuration = 2000; //ms
+//the pause duration after animating, before the element returns to its start position
+let pausePostAnimation = 1000;
+
+let animationLoopTime = animationDuration + pausePostAnimation;
+
 export function animatesPlayerElement(targetElement, animation) {
   player.choice.animating = true;
   targetElement.setAttribute("class", animation);
   setTimeout(function () {
     targetElement.removeAttribute("class", animation);
     player.choice.animating = false;
-  }, 3000);
+  }, animationLoopTime);
 }
 
 export function animatesComputerElement(animation) {
   if (computer.choice.type === "rock") {
-    targetsThisElementAndRunsAnimationForThisTime(computerRockElement, 3000);
+    targetsThisElementAndRunsAnimationForThisTime(
+      computerRockElement,
+      animationLoopTime
+    );
   }
   if (computer.choice.type === "paper") {
-    targetsThisElementAndRunsAnimationForThisTime(computerPaperElement, 3000);
+    targetsThisElementAndRunsAnimationForThisTime(
+      computerPaperElement,
+      animationLoopTime
+    );
   }
   if (computer.choice.type === "scissors") {
     targetsThisElementAndRunsAnimationForThisTime(
       computerScissorsElement,
-      3000
+      animationLoopTime
     );
   }
 

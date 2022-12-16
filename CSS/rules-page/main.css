@@ -1,6 +1,6 @@
 #rules-container {
   display: none;
-  height: 700px;
+  height: 100%;
   align-self: center;
 }
 
@@ -37,6 +37,7 @@
   padding: 1rem 4rem 1rem 4rem;
 }
 
+/* flips through choice images to illustrate that a pair of the same type results in a draw */
 .alternating-imgs {
   background-position: center;
   background-repeat: no-repeat;

@@ -17,17 +17,14 @@ import {
 } from "./elements.js";
 
 import {
-  handleChange,
-  handleClick,
-  handleCheckbox,
-  handleStartButton,
+  handlesChange,
+  handlesClick,
+  handlesCheckbox,
+  handlesStartButton,
 } from "./events.js";
 
 import { choicesAreComparedAndWinnerIsDeclared } from "./choices.js";
-import {
-  collectsComputerStats,
-  updatesGameStats,
-} from "./stats.js";
+import { collectsComputerStats, updatesGameStats } from "./stats.js";
 
 export let game = {
   settings: { nameWasChosen: false, bestOf: null },
@@ -54,28 +51,27 @@ export let computer = {
 
 const choices = ["rock", "paper", "scissors"];
 
-nameInput.addEventListener("change", handleChange);
-check3.addEventListener("change", handleChange);
-check5.addEventListener("change", handleChange);
-startButton.addEventListener("click", handleClick);
-rockElement.addEventListener("click", handleClick);
-paperElement.addEventListener("click", handleClick);
-scissorsElement.addEventListener("click", handleClick);
-rematchButton.addEventListener("click", handleClick);
-returnToMainMenuButton.addEventListener("click", handleClick);
+nameInput.addEventListener("change", handlesChange);
+check3.addEventListener("change", handlesChange);
+check5.addEventListener("change", handlesChange);
+startButton.addEventListener("click", handlesClick);
+rockElement.addEventListener("click", handlesClick);
+paperElement.addEventListener("click", handlesClick);
+scissorsElement.addEventListener("click", handlesClick);
+rematchButton.addEventListener("click", handlesClick);
+returnToMainMenuButton.addEventListener("click", handlesClick);
 
 export function runGame() {
   requestAnimationFrame(runGame);
 
-  handleCheckbox(check3, check5);
-  handleStartButton(startButton);
+  handlesCheckbox(check3, check5);
+  handlesStartButton(startButton);
 
   showScore();
   showNames();
 
   if (player.choice.made) {
     //animations and stats collection are triggered on click (see events.js)
-    console.log("Player: " + player.choice.type);
     computerIsAllowedToMakeAChoice();
   } else {
     return;
@@ -87,7 +83,7 @@ export function runGame() {
 
   choicesAreComparedAndWinnerIsDeclared();
 
- updatesGameStats();
+  updatesGameStats();
 }
 
 function showScore() {
@@ -109,5 +105,4 @@ function computerIsAllowedToMakeAChoice() {
 }
 function computerMakesAChoice() {
   computer.choice.type = choices[Math.floor(Math.random() * (3 - 0) + 0)];
-  console.log("Computer: " + computer.choice.type);
 }

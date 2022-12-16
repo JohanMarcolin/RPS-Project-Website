@@ -3,7 +3,6 @@ import {
   mainMenu,
   check3,
   check5,
-  startButton,
   gameRunning,
   roundResult,
   compactRoundResult,
@@ -14,11 +13,10 @@ import {
 } from "./elements.js";
 import { animatesPlayerElement } from "./animations.js";
 
-export function handleChange(event) {
+export function handlesChange(event) {
   if (event.target.id === "player-name") {
     player.name = event.target.value;
     game.settings.nameWasChosen = true;
-    return player.name, game.settings;
   }
 
   if (event.target.id === "check-3") {
@@ -32,15 +30,13 @@ export function handleChange(event) {
   function assignsThisAmountOfRoundsWhenCheckboxIsToggled(checkbox, rounds) {
     if (!checkbox.checked) {
       game.settings.bestOf = null;
-      return game.settings;
     } else {
       game.settings.bestOf = rounds;
-      return game.settings;
     }
   }
 }
 
-export function handleClick(event) {
+export function handlesClick(event) {
   if (player.choice.animating) {
     return;
   }
@@ -91,7 +87,7 @@ export function handleClick(event) {
   }
 }
 
-export function handleCheckbox(check3, check5) {
+export function handlesCheckbox(check3, check5) {
   if (check3.checked) {
     check5.setAttribute("disabled", "");
   } else if (!check3.checked) {
@@ -104,7 +100,7 @@ export function handleCheckbox(check3, check5) {
   }
 }
 
-export function handleStartButton(startButton) {
+export function handlesStartButton(startButton) {
   if (
     player.name === null ||
     player.name === "" ||

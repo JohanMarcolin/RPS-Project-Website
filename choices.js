@@ -31,23 +31,11 @@ function determinesTheWinnerOfEachRound(subject, opponent) {
 }
 
 function determinesIfSubjectWinsTheRound(subject, opponent) {
-  if (subject.choice.type === "rock" && opponent.choice.type === "scissors") {
-    showsResultsForAllScreenWidths(
-      subject.name + " wins the round!",
-      subject.name + " wins the round!"
-    );
-    subject.score++;
-  }
-
-  if (subject.choice.type === "paper" && opponent.choice.type === "rock") {
-    showsResultsForAllScreenWidths(
-      subject.name + " wins the round!",
-      subject.name + " wins the round!"
-    );
-    subject.score++;
-  }
-
-  if (subject.choice.type === "scissors" && opponent.choice.type === "paper") {
+  if (
+    (subject.choice.type === "rock" && opponent.choice.type === "scissors") ||
+    (subject.choice.type === "paper" && opponent.choice.type === "rock") ||
+    (subject.choice.type === "scissors" && opponent.choice.type === "paper")
+  ) {
     showsResultsForAllScreenWidths(
       subject.name + " wins the round!",
       subject.name + " wins the round!"
@@ -88,7 +76,6 @@ function determinesIfSubjectWinsTheGame(
   ) {
     showsFinalScoresAndResults(subject.name + "\n wins the game!");
     switchesToNextContainerAfterThisTime(gameRunning, gameOver, 3500);
-    //known bug, attribute points correctly!
     subjectStats.wins++;
     opponentStats.losses++;
   }

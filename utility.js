@@ -6,15 +6,20 @@ import {
   finalResult,
 } from "./elements.js";
 
+//the amount of time after the choices are made -> that the result is shown
+let showResultAfterThisTime = 2000; //ms
+//-||- -> that the result is removed
+let removeResultAfterThisTime = 4000; //ms
+
 export function showsResultsForAllScreenWidths(string1, string2) {
   setTimeout(() => {
     roundResult.innerText = string1;
     compactRoundResult.innerText = string2;
-  }, 2000);
+  }, showResultAfterThisTime);
   setTimeout(() => {
     roundResult.innerText = "";
     compactRoundResult.innerText = "";
-  }, 4000);
+  }, removeResultAfterThisTime);
 }
 
 export function showsFinalScoresAndResults(string) {

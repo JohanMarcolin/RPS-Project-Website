@@ -1,6 +1,6 @@
 * {
-/* outline: solid 1px green; */
- }
+outline: solid 1px green;
+}
 
 html {
   height: 100%;
@@ -29,6 +29,7 @@ header {
 }
 
 main {
+  height: 700px;
   grid-area: main;
   background-image: radial-gradient(
     circle,
@@ -38,9 +39,6 @@ main {
     #181b1c,
     #111314
   );
-  display:flex;
-
-  flex: 1;
 }
 
 main > * {
@@ -61,27 +59,28 @@ footer {
   align-items: center;
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p,
+a {
   color: white;
 }
 
+/* To prevent having to scroll if viewing the site on laptop */
 @media screen and (max-height: 900px) {
-
-  #home-container, #scene-box, #scene-img {
+  #home-container,
+  #scene-box,
+  #scene-img,
+  #scene-container {
     height: 600px !important;
   }
-  #game-container {
-    height: 600px !important;
-  }
-  #rules-container {
+  main {
     height: 600px !important;
   }
   #stats-container {
-   /*  height: 600px !important; */
-    scale: 0.90 !important;
-    
+    scale: 0.85 !important;
+    margin-top: -2rem;
   }
-
-
-
 }
