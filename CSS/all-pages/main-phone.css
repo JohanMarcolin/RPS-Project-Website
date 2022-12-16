@@ -1,4 +1,4 @@
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
   html,
   body {
     overflow-y: hidden;
@@ -38,7 +38,7 @@
 }
 
 /* removes footer for iphone (due to limited vh) */
-@media screen and (max-width: 400px) and (max-height: 700px) {
+@media screen and (max-width: 415px) and (max-height: 700px) {
   body {
     position: relative;
     display: grid;
