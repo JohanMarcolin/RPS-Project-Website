@@ -1,7 +1,4 @@
-//contains all elements that are used for DOM manipulation
-
-//handles viewport changes due to keyboard (on phone)
-
+//NOT part of hand-in version, handles viewport changes due to keyboard (on phone)
 export function adjustsTheSizeOfBodyToTheSizeOfViewport() {
   let height = Math.max(
     document.documentElement.clientHeight,
@@ -16,6 +13,8 @@ export function adjustsTheSizeOfBodyToTheSizeOfViewport() {
   document.body.style.height = height;
   document.body.style.width = width;
 }
+
+//contains all elements that are used for DOM manipulation
 
 //THE SITE MENU
 export let barsIcon = document.querySelector("#bars-icon");
