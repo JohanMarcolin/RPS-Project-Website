@@ -1,7 +1,7 @@
 //contains all elements that are used for DOM manipulation
 
-//body; used to set viewport size on phone
-let body = document.querySelector("#body");
+//handles viewport changes due to keyboard (on phone)
+
 export function adjustsTheSizeOfBodyToTheSizeOfViewport() {
   let height = Math.max(
     document.documentElement.clientHeight,
@@ -11,8 +11,10 @@ export function adjustsTheSizeOfBodyToTheSizeOfViewport() {
     document.documentElement.clientWidth,
     window.innerWidth || 0
   );
-  body.style.height = height;
-  body.style.width = width;
+  height = height.toString() + "px";
+  width = width.toString() + "px";
+  document.body.style.height = height;
+  document.body.style.width = width;
 }
 
 //THE SITE MENU
