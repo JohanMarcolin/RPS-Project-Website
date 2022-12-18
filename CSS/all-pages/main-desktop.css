@@ -26,6 +26,7 @@ header {
 
 main {
   height: 700px;
+  width: 1fr;
   grid-area: main;
   background-image: radial-gradient(
     circle,

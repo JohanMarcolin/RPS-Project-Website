@@ -7,6 +7,7 @@
 
 #menu-container {
   display: none;
+  position: relative;
   justify-content: flex-start;
   align-items: center;
   padding-right: 2rem;

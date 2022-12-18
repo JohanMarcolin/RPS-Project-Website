@@ -78,10 +78,18 @@ export function handlesPieChart(
   data4,
   data5
 ) {
-  let totalGames = these.wins + these.losses;
+  let totalGames;
+  let winRatio;
+  let lossRatio;
+  let totalChoices;
+  let rockRatio;
+  let paperRatio;
+  let scissorsRatio;
+  let scissorsRatioForPiechart;
 
-  let winRatio = (these.wins / totalGames) * 100;
-  let lossRatio = (these.losses / totalGames) * 100;
+  totalGames = these.wins + these.losses;
+  winRatio = (these.wins / totalGames) * 100;
+  lossRatio = (these.losses / totalGames) * 100;
 
   chart1.style.backgroundImage = //only winRatio is needed for the chart
     "conic-gradient(" +
@@ -92,22 +100,22 @@ export function handlesPieChart(
     lossesColor +
     " 0 100%)"; //the remaining % amount illustrates the % of losing
 
-  let totalChoices =
+  totalChoices =
     these.choices.rock + these.choices.paper + these.choices.scissors;
 
-  let rockRatio = (these.choices.rock / totalChoices) * 100;
+  rockRatio = (these.choices.rock / totalChoices) * 100;
   if (these.choices.rock === 0) {
     rockRatio = 0;
   }
-  let paperRatio = (these.choices.paper / totalChoices) * 100;
+  paperRatio = (these.choices.paper / totalChoices) * 100;
   if (these.choices.paper === 0) {
     paperRatio = 0;
   }
-  let scissorsRatio = (these.choices.scissors / totalChoices) * 100;
+  scissorsRatio = (these.choices.scissors / totalChoices) * 100;
   if (these.choices.scissors === 0) {
     scissorsRatio = 0;
   }
-  let scissorsRatioForPiechart = scissorsRatio;
+  scissorsRatioForPiechart = scissorsRatio;
   scissorsRatioForPiechart += paperRatio; //needed for the correct ratio in the chart
 
   if (these.wins === 0 && these.losses === 0) {
