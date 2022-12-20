@@ -64,7 +64,6 @@ returnToMainMenuButton.addEventListener("click", handlesClick);
 
 export function runGame() {
   requestAnimationFrame(runGame);
-  adjustsTheSizeOfBodyToTheSizeOfViewport();
 
   handlesCheckbox(check3, check5);
   handlesStartButton(startButton);
