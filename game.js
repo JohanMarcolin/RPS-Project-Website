@@ -14,7 +14,6 @@ import {
   scissorsElement,
   rematchButton,
   returnToMainMenuButton,
-  adjustsTheSizeOfBodyToTheSizeOfViewport,
 } from "./elements.js";
 
 import {

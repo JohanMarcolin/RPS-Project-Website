@@ -21,6 +21,25 @@ footer a {
 
 /* removes footer content for iphone (due to limited vh) */
 @media screen and (max-width: 415px) and (max-height: 700px) {
+  body {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    max-height: 100%;
+  }
+
+  footer,
   #footer-icons,
   #footer-text {
     display: none;

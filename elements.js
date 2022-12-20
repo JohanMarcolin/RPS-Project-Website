@@ -1,19 +1,3 @@
-//NOT part of hand-in version, handles viewport changes due to keyboard (on phone)
-export function adjustsTheSizeOfBodyToTheSizeOfViewport() {
-  let height = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight || 0
-  );
-  let width = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
-  height = height.toString() + "px";
-  width = width.toString() + "px";
-  document.body.style.height = height;
-  document.body.style.width = width;
-}
-
 //contains all elements that are used for DOM manipulation
 
 //THE SITE MENU
