@@ -30,16 +30,6 @@
     grid-area: footer;
     align-self: center;
   }
-
-  #footer-text {
-    display: none;
-  }
 }
 
-/* removes footer content for iphone (due to limited vh) */
-@media screen and (max-width: 415px) and (max-height: 700px) {
-  #footer-icons,
-  #footer-text {
-    display: none;
-  }
-}
+
