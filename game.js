@@ -53,7 +53,7 @@ export let computer = {
 const choices = ["rock", "paper", "scissors"];
 
 //NOT part of hand-in version
-/* addEventListener('resize', adjustsTheSizeOfBodyToTheSizeOfViewport); */
+addEventListener('resize', adjustsTheSizeOfBodyToTheSizeOfViewport);
 nameInput.addEventListener("change", handlesChange);
 check3.addEventListener("change", handlesChange);
 check5.addEventListener("change", handlesChange);
