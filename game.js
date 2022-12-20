@@ -52,8 +52,6 @@ export let computer = {
 
 const choices = ["rock", "paper", "scissors"];
 
-//NOT part of hand-in version
-addEventListener('resize', adjustsTheSizeOfBodyToTheSizeOfViewport);
 nameInput.addEventListener("change", handlesChange);
 check3.addEventListener("change", handlesChange);
 check5.addEventListener("change", handlesChange);
@@ -66,6 +64,7 @@ returnToMainMenuButton.addEventListener("click", handlesClick);
 
 export function runGame() {
   requestAnimationFrame(runGame);
+  adjustsTheSizeOfBodyToTheSizeOfViewport();
 
   handlesCheckbox(check3, check5);
   handlesStartButton(startButton);
